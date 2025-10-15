@@ -23,14 +23,14 @@ export function initFormHandler() {
         });
 
         if (res.ok) {
-          alert('✅ Form submitted successfully!');
+          console.log('✅ Form submitted successfully!');
           form.reset();
         } else {
-          alert('⚠️ Something went wrong.');
+          console.log('⚠️ Something went wrong.');
         }
       } catch (err) {
         console.error('❌ Form submission error:', err);
-        alert('❌ Network error. Please try again later.');
+        console.log('❌ Network error. Please try again later.');
       }
     });
   });
