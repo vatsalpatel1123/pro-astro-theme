@@ -1,0 +1,129 @@
+---
+// locationForm.astro
+---
+
+<form id="locationForm" class="common-form space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                Full Name <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="text"
+                name="fullName"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                placeholder="John Doe"
+            />
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                Phone Number <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="tel"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                placeholder="(718) 555-0123"
+            />
+        </div>
+    </div>
+
+    <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-2">
+            Email Address <span class="text-red-500">*</span>
+        </label>
+        <input
+            type="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+            placeholder="john@example.com"
+        />
+    </div>
+
+    <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-2">
+            Property Address <span class="text-red-500">*</span>
+        </label>
+        <input
+            type="text"
+            name="propertyAddress"
+            required
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+            placeholder="123 Main Street, Great Neck, NY 11021"
+        />
+    </div>
+
+    <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-2">
+            What's Your Situation? <span class="text-red-500">*</span>
+        </label>
+        <select
+            name="situation"
+            required
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+        >
+            <option value="">Select your situation...</option>
+            <option value="inherited">Inherited Property</option>
+            <option value="foreclosure">Avoiding Foreclosure</option>
+            <option value="divorce">Divorce Settlement</option>
+            <option value="relocation">Relocating</option>
+            <option value="downsize">Downsizing</option>
+            <option value="repairs">Property Needs Repairs</option>
+            <option value="taxes">Tax Liens or Code Violations</option>
+            <option value="quick-sale">Need to Sell Quickly</option>
+            <option value="land">Land or Development Sale</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-2">
+            Additional Details (Optional)
+        </label>
+        <textarea
+            name="message"
+            rows="4"
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+            placeholder="Tell us more about your property and timeline..."
+        ></textarea>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div class="flex items-start">
+            <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div class="text-sm text-blue-900">
+                <p class="font-semibold mb-1">Privacy Guaranteed</p>
+                <p>Your information is 100% confidential and will never be shared. We'll contact you within 24 hours to discuss your offer.</p>
+            </div>
+        </div>
+    </div>
+
+    <button
+        type="submit"
+        class="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition font-bold text-lg shadow-lg hover:shadow-xl flex items-center justify-center"
+    >
+        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Request My Cash Offer
+    </button>
+
+    <p class="text-center text-sm text-slate-500">
+        By submitting this form, you agree to be contacted by Pro Home Buyers regarding your property.
+    </p>
+</form>
+
+<script>
+    import { initFormHandler } from '../scripts/formHandler.js';
+    if (typeof window !== 'undefined') {
+        document.addEventListener('DOMContentLoaded', () => {
+            initFormHandler();
+        });
+    }
+</script>

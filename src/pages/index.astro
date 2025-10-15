@@ -1,5 +1,8 @@
 ---
 // src/pages/index.astro
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import AboutForm from '../components/aboutForm.astro';
 ---
 
 <!DOCTYPE html>
@@ -7,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArchiRect - Award-Winning Architecture</title>
+    <title>Pro Home Buyers - Sell Your Long Island Home Privately</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -38,95 +41,310 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="glass-effect sticky top-0 z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                    </svg>
-                    <span class="text-2xl font-bold text-gray-900">ArchiRect</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="/" class="text-blue-600 font-semibold">Home</a>
-                    <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
-                    <a href="/services" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Projects</a>
-                    <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
-                </div>
-                <button class="md:hidden p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <Navigation />
 
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h1 class="text-5xl font-bold text-gray-900 mb-6">
-                    Designing Spaces<br/>
-                    <span class="gradient-text">That Inspire</span>
+                    Sell Your Long Island Home<br/>
+                    <span class="gradient-text">Privately and On Your Terms</span>
                 </h1>
                 <p class="text-gray-600 text-lg mb-8">
-                    We create architectural masterpieces that blend innovation with functionality. 
-                    Our award-winning designs transform spaces into experiences that inspire and endure.
+                    No repairs. No commissions. No open houses. Fair cash offers from local buyers with 40+ years of experience.
                 </p>
-                <div class="flex space-x-4">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
                     <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-                        Get Started
+                        Get My Offer Now
                     </button>
                     <button class="border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
-                        Learn More
+                        Call or Text (718) 288-7300
                     </button>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm text-gray-600">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        No Obligations
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Fair Cash Offers
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Close on Your Timeline
+                    </div>
                 </div>
             </div>
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" 
-                     alt="Modern Architecture" 
+                     alt="Beautiful Long Island Home" 
                      class="rounded-2xl shadow-2xl hover-scale"/>
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-lg">
-                    <p class="text-sm text-gray-600">Modern Villa Design</p>
-                    <p class="font-semibold text-gray-900">Los Angeles, CA</p>
+                    <p class="text-sm text-gray-600">Trusted Local Buyers</p>
+                    <p class="font-semibold text-gray-900">Nassau County, NY</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Grid -->
+    <!-- How It Works Section -->
     <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                Sell Your Home in 4 Simple Steps
+            </h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Our process is transparent, fast, and designed around your needs.
+            </p>
+        </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop" 
-                 class="rounded-xl hover-scale cursor-pointer" alt="Project 1"/>
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop" 
-                 class="rounded-xl hover-scale cursor-pointer" alt="Project 2"/>
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop" 
-                 class="rounded-xl hover-scale cursor-pointer" alt="Project 3"/>
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=400&fit=crop" 
-                 class="rounded-xl hover-scale cursor-pointer" alt="Project 4"/>
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center hover-scale cursor-pointer">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">1</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Submit Your Info</h3>
+                <p class="text-sm text-gray-600">Tell us about your property. Takes just 2 minutes.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center hover-scale cursor-pointer">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">2</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Quick 5-Minute Call</h3>
+                <p class="text-sm text-gray-600">We'll confirm details—no pressure.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center hover-scale cursor-pointer">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">3</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Get Your Offer</h3>
+                <p class="text-sm text-gray-600">Fair cash offer within 24 hours.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center hover-scale cursor-pointer">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">4</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Close On Your Terms</h3>
+                <p class="text-sm text-gray-600">7 days or 7 months—you choose.</p>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                Start Your Sale Today →
+            </button>
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Why Long Island Homeowners Trust Us
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    We're not just another "we buy houses" company. We're your Long Island neighbors with decades of proven expertise.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">🏗️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">40+ Years of Experience</h3>
+                    <p class="text-gray-600">
+                        Combined decades of expertise in construction, development, and real estate. We know Long Island properties inside and out.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Development-Based Offers</h3>
+                    <p class="text-gray-600">
+                        Our offers are rooted in real development analysis—not quick flips. We evaluate what your property can become, ensuring you receive its true worth.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">📍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Local Knowledge, Fair Process</h3>
+                    <p class="text-gray-600">
+                        Born and raised in Manhasset with deep roots across Nassau County. We understand neighborhood dynamics, zoning, and market trends.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
+                    Learn More About Us →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Situations We Help With Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                Whatever Your Situation, We Can Help
+            </h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Life happens. Whether you're downsizing, dealing with an inheritance, or facing financial stress—we're here to help with compassion and professionalism.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Inherited Property</h3>
+                <p class="text-gray-600 text-sm">Simplify the process of selling an estate</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Foreclosure</h3>
+                <p class="text-gray-600 text-sm">Stop foreclosure and move forward with dignity</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Behind on Taxes</h3>
+                <p class="text-gray-600 text-sm">Avoid tax liens and legal issues</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Divorce</h3>
+                <p class="text-gray-600 text-sm">Quick, private sale during difficult times</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Job Relocation</h3>
+                <p class="text-gray-600 text-sm">Sell fast without listing hassles</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Vacant Property</h3>
+                <p class="text-gray-600 text-sm">Stop paying for a property you don't use</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Code Violations</h3>
+                <p class="text-gray-600 text-sm">Sell as-is without costly repairs</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Downsizing</h3>
+                <p class="text-gray-600 text-sm">Move to your next chapter stress-free</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+            <button class="border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
+                See How We Can Help Your Situation →
+            </button>
+        </div>
+    </section>
+
+    <!-- Local Expertise Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Proudly Serving Long Island Communities</h2>
+                <p class="text-gray-600 text-lg">
+                    From the North Shore to the South Shore, we know every neighborhood like the back of our hand.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Great Neck</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Manhasset</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Port Washington</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Roslyn</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Glen Head</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Glen Cove</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Westbury</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Jericho</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Syosset</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Melville</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Garden City</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Mineola</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Hicksville</span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-700 mb-6 text-lg">
+                    Based in Manhasset with family roots throughout Nassau County. We cover all of Nassau County and select areas of Queens and Suffolk County.
+                </p>
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                    Check If We Buy in Your Area →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Credibility Section -->
     <!-- About Section -->
     <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                        Award-Winning Architectural Excellence
+                        Built on Trust. Rooted in Long Island.
                     </h2>
                     <p class="text-gray-600 mb-6">
-                        With over two decades of experience, we've established ourselves as leaders in 
-                        contemporary architecture. Our team of visionary architects and designers work 
-                        collaboratively to bring your dream spaces to life.
+                        Pro Home Buyers was founded on the principles of integrity, transparency, and local expertise. With over 40 years of combined experience in building and real estate development, we understand what makes Long Island properties valuable.
                     </p>
                     <p class="text-gray-600 mb-8">
-                        From residential masterpieces to commercial landmarks, we pride ourselves on 
-                        creating spaces that are not only aesthetically stunning but also functionally 
-                        superior and environmentally conscious.
+                        Our roots run deep in Manhasset, where we've witnessed the evolution of Long Island's real estate market firsthand. This intimate knowledge allows us to make fair, development-based offers that reflect true market value—not opportunistic lowballs.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-center space-x-3">
@@ -169,132 +387,18 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                Comprehensive Architecture Solutions
-            </h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                From concept to completion, we offer a full spectrum of architectural services 
-                tailored to your unique vision and requirements.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-                <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Architectural Design</h3>
-                <p class="text-gray-600 mb-6">
-                    Creating innovative and functional designs that reflect your vision while 
-                    maximizing space utilization and aesthetic appeal.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Conceptual Design
-                    </li>
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        3D Visualization
-                    </li>
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Space Planning
-                    </li>
-                </ul>
-            </div>
-
-            <div class="text-center">
-                <button class="border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
-                    Load More Projects
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Project Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wide">Featured Project</span>
-                <h2 class="text-4xl font-bold text-gray-900 my-6">The MetGlitz Tower</h2>
-                <p class="text-gray-600 mb-6">
-                    Rising majestically in the heart of downtown, the MetGlitz Tower represents 
-                    the pinnacle of modern architectural achievement. This 58-story mixed-use 
-                    development combines luxury residences, premium office spaces, and world-class 
-                    amenities in a stunning glass and steel structure.
-                </p>
-                <p class="text-gray-600 mb-8">
-                    The tower's innovative design incorporates sustainable technologies, including 
-                    solar panels, rainwater harvesting systems, and energy-efficient climate control, 
-                    earning it LEED Platinum certification.
-                </p>
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <p class="text-sm text-gray-500 mb-1">Location</p>
-                        <p class="font-semibold text-gray-900">Chicago, Illinois</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-500 mb-1">Completion</p>
-                        <p class="font-semibold text-gray-900">December 2023</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-500 mb-1">Height</p>
-                        <p class="font-semibold text-gray-900">750 feet</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-500 mb-1">Size</p>
-                        <p class="font-semibold text-gray-900">1.2M sq ft</p>
-                    </div>
-                </div>
-                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-                    View Case Study
-                </button>
-            </div>
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=1000&fit=crop" 
-                     alt="MetGlitz Tower" 
-                     class="rounded-2xl shadow-2xl"/>
-                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900">LEED Platinum</p>
-                            <p class="text-sm text-gray-600">Certified Green Building</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+    <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Long Island Homeowners Say</h2>
                 <p class="text-gray-600 text-lg">
-                    Don't just take our word for it - hear from our satisfied clients
+                    Real stories from real sellers in your neighborhood.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
                     <div class="flex mb-4">
                         <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -312,21 +416,19 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        "ArchiRect transformed our vision into reality beyond our expectations. Their attention 
-                        to detail and innovative approach resulted in a home that perfectly balances aesthetics 
-                        with functionality."
+                    <p class="text-gray-700 mb-6">
+                        "After my father passed, I needed to sell his house in Manhasset quickly. Pro Home Buyers made the process incredibly easy and stress-free. They were respectful, fair, and closed in just two weeks."
                     </p>
                     <div class="flex items-center">
-                        <img src="https://i.pravatar.cc/150?img=12" alt="Client" class="w-12 h-12 rounded-full mr-4"/>
+                        <img src="https://i.pravatar.cc/150?img=45" alt="Client" class="w-12 h-12 rounded-full mr-4"/>
                         <div>
-                            <p class="font-semibold text-gray-900">Sarah Johnson</p>
-                            <p class="text-sm text-gray-500">Homeowner, Beverly Hills</p>
+                            <p class="font-semibold text-gray-900">Jennifer M.</p>
+                            <p class="text-sm text-gray-500">Manhasset, NY</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
                     <div class="flex mb-4">
                         <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -344,21 +446,19 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        "Working with ArchiRect was seamless from start to finish. Their professionalism, 
-                        creativity, and commitment to sustainability made our corporate headquarters a 
-                        landmark in the city."
+                    <p class="text-gray-700 mb-6">
+                        "I was going through a divorce and needed to sell fast. These guys understood my situation and didn't lowball me like other 'we buy houses' companies. The offer was fair and the closing was smooth."
                     </p>
                     <div class="flex items-center">
                         <img src="https://i.pravatar.cc/150?img=33" alt="Client" class="w-12 h-12 rounded-full mr-4"/>
                         <div>
-                            <p class="font-semibold text-gray-900">Michael Chen</p>
-                            <p class="text-sm text-gray-500">CEO, TechVision Inc.</p>
+                            <p class="font-semibold text-gray-900">Robert T.</p>
+                            <p class="text-sm text-gray-500">Great Neck, NY</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
                     <div class="flex mb-4">
                         <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -376,16 +476,14 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        "The team at ArchiRect is simply outstanding. They listened to our needs, 
-                        provided innovative solutions, and delivered a stunning retail space that has 
-                        become a destination for our customers."
+                    <p class="text-gray-700 mb-6">
+                        "My mother's home needed extensive repairs we couldn't afford. Pro Home Buyers bought it as-is for a price that made sense. No pressure, no games—just honest people doing honest business."
                     </p>
                     <div class="flex items-center">
                         <img src="https://i.pravatar.cc/150?img=47" alt="Client" class="w-12 h-12 rounded-full mr-4"/>
                         <div>
-                            <p class="font-semibold text-gray-900">Emily Rodriguez</p>
-                            <p class="text-sm text-gray-500">Owner, Luxe Boutique</p>
+                            <p class="font-semibold text-gray-900">Linda P.</p>
+                            <p class="text-sm text-gray-500">Roslyn, NY</p>
                         </div>
                     </div>
                 </div>
@@ -404,260 +502,134 @@
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Your Questions, Answered</h2>
             <p class="text-gray-600 text-lg">
-                Everything you need to know about working with ArchiRect
+                Everything you need to know about selling your home to Pro Home Buyers
             </p>
         </div>
 
         <div class="space-y-4">
             <details class="bg-white rounded-xl shadow-md overflow-hidden group">
                 <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
-                    What is your typical project timeline?
+                    How quickly can you close?
                     <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </summary>
                 <div class="px-8 pb-6 text-gray-600">
-                    Project timelines vary depending on scope and complexity. A typical residential project takes 
-                    4-6 months from initial consultation to final design delivery, while commercial projects may 
-                    take 8-12 months. We provide detailed timelines during our initial consultation.
+                    As fast as 7 days, or we can wait months if you need more time. You choose the closing date that works best for your situation.
                 </div>
             </details>
 
             <details class="bg-white rounded-xl shadow-md overflow-hidden group">
                 <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
-                    How much does an architectural project cost?
+                    Do I have to make repairs?
                     <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </summary>
                 <div class="px-8 pb-6 text-gray-600">
-                    Costs depend on project size, complexity, and location. We offer transparent pricing and provide 
-                    detailed proposals after our initial consultation. Our fees typically range from 8-15% of total 
-                    construction costs for full architectural services.
+                    No. We buy houses in any condition—as-is. No repairs, no cleaning, no staging required.
                 </div>
             </details>
 
             <details class="bg-white rounded-xl shadow-md overflow-hidden group">
                 <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
-                    Do you offer sustainable/green design solutions?
+                    Will you charge me any fees?
                     <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </summary>
                 <div class="px-8 pb-6 text-gray-600">
-                    Absolutely! Sustainability is at the core of our design philosophy. We integrate energy-efficient 
-                    systems, sustainable materials, and green building practices into all our projects. We're 
-                    experienced in LEED certification and other green building standards.
+                    Never. No commissions, no closing costs, no hidden fees. The offer we make is what you receive.
                 </div>
             </details>
 
             <details class="bg-white rounded-xl shadow-md overflow-hidden group">
                 <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
-                    What is your design process like?
+                    How do you determine your offer?
                     <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </summary>
                 <div class="px-8 pb-6 text-gray-600">
-                    Our process includes: Initial Consultation, Site Analysis, Concept Design, Design Development, 
-                    Construction Documentation, and Construction Administration. We maintain close collaboration with 
-                    clients throughout each phase to ensure the final design exceeds expectations.
+                    We evaluate your property based on location, development potential, and comparable sales—not just condition. Our offers reflect real development value.
+                </div>
+            </details>
+
+            <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
+                    What areas do you buy in?
+                    <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </summary>
+                <div class="px-8 pb-6 text-gray-600">
+                    All of Nassau County and select areas of Queens and Suffolk County. Call us at (718) 288-7300 to confirm service in your specific area.
+                </div>
+            </details>
+
+            <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
+                    Are you real estate agents?
+                    <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </summary>
+                <div class="px-8 pb-6 text-gray-600">
+                    No. We are direct buyers with our own capital. This means faster closings and no commissions.
                 </div>
             </details>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Final CTA Section -->
     <section class="bg-gradient-to-br from-blue-600 to-indigo-700 py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-4xl font-bold text-white mb-6">
-                        Start Your Project Today
+                        Ready to Sell Privately and on Your Terms?
                     </h2>
                     <p class="text-blue-100 text-lg mb-8">
-                        Let's bring your architectural vision to life. Whether you're planning a dream 
-                        home, commercial space, or large-scale development, our team is ready to make it happen.
+                        Get a fair, no-obligation cash offer from Long Island's most trusted home buyers. We'll walk you through every step of the process with complete transparency.
                     </p>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            Free initial consultation
+                            No Pressure
                         </li>
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            Expert design team with 20+ years experience
+                            Fair Offers
                         </li>
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            Comprehensive project management
+                            Your Timeline
+                        </li>
+                        <li class="flex items-center text-white">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Local Team
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-2xl p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                            <input type="text" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                   placeholder="John Doe"/>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                            <input type="email" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                   placeholder="john@example.com"/>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                   placeholder="+1 (555) 000-0000"/>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option>Select project type</option>
-                                <option>Residential</option>
-                                <option>Commercial</option>
-                                <option>Mixed-Use</option>
-                                <option>Interior Design</option>
-                                <option>Renovation</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea rows="4" 
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                      placeholder="Tell us about your project..."></textarea>
-                        </div>
-                        <button type="submit" 
-                                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
-                            Send Message
-                        </button>
-                    </form>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get Your Cash Offer</h3>
+                    <AboutForm />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                        </svg>
-                        <span class="text-2xl font-bold text-white">ArchiRect</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">
-                        Creating architectural masterpieces that inspire and endure. Award-winning designs 
-                        since 2003.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-lg mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-blue-500 transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Our Services</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Projects</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Awards</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">News & Blog</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-lg mb-6">Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-blue-500 transition">Architectural Design</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Interior Design</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Urban Planning</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">3D Visualization</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Sustainable Design</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Consultation</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-lg mb-6">Contact Info</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-3 mt-1 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span>123 Architecture Ave, Suite 500<br/>New York, NY 10001</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span>info@archirect.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                        © 2025 ArchiRect. All rights reserved.
-                    </p>
-                    <div class="flex space-x-6 text-sm">
-                        <a href="#" class="hover:text-blue-500 transition">Privacy Policy</a>
-                        <a href="#" class="hover:text-blue-500 transition">Terms of Service</a>
-                        <a href="#" class="hover:text-blue-500 transition">Cookie Policy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <Footer />
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" 

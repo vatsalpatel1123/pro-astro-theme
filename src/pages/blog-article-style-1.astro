@@ -1,0 +1,563 @@
+---
+// src/pages/blog-article-style-1.astro
+// Style 1: Classic centered layout with sidebar
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Sustainable Architecture in Long Island | ArchiRect Blog</title>
+    <meta name="description" content="Discover how modern sustainable design principles are transforming Long Island's architectural landscape and creating eco-friendly homes for the future.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #334155;
+            font-size: 1.25rem;
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .article-content img {
+            border-radius: 1rem;
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .share-button {
+            transition: all 0.2s ease;
+        }
+
+        .share-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <Navigation />
+
+    <!-- Breadcrumb -->
+    <section class="bg-white border-b border-slate-200 py-4">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="/" class="text-slate-600 hover:text-blue-600">Home</a>
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <a href="/blog" class="text-slate-600 hover:text-blue-600">Blog</a>
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <span class="text-slate-900 font-medium">Article Title</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Header -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-6">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                    Architecture
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                The Future of Sustainable Architecture in Long Island
+            </h1>
+            <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                Discover how modern sustainable design principles are transforming Long Island's
+                architectural landscape and creating eco-friendly homes for the future.
+            </p>
+
+            <!-- Author Info -->
+            <div class="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-slate-200">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        JD
+                    </div>
+                    <div>
+                        <p class="font-semibold text-slate-900 text-lg">John Doe</p>
+                        <div class="flex items-center space-x-3 text-sm text-slate-500">
+                            <span>March 15, 2025</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-slate-600 mr-2">Share:</span>
+                    <button class="share-button w-10 h-10 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </button>
+                    <button class="share-button w-10 h-10 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"/>
+                        </svg>
+                    </button>
+                    <button class="share-button w-10 h-10 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </button>
+                    <button class="share-button w-10 h-10 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full flex items-center justify-center transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Image -->
+    <section class="bg-white pb-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <div class="h-[500px] bg-gradient-to-br from-blue-200 to-slate-300 flex items-center justify-center">
+                    <svg class="w-40 h-40 text-blue-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content with Sidebar -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-8">
+                    <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12 article-content">
+                        <p>
+                            Sustainable architecture has become more than just a trend—it's a necessity in today's world.
+                            As Long Island faces the challenges of climate change and rising energy costs, architects and
+                            homeowners are turning to innovative design solutions that prioritize both environmental
+                            responsibility and long-term cost savings.
+                        </p>
+
+                        <p>
+                            In this comprehensive guide, we'll explore the cutting-edge sustainable design principles
+                            that are reshaping Long Island's architectural landscape, from passive solar design to
+                            green building materials and renewable energy integration.
+                        </p>
+
+                        <h2>The Rise of Sustainable Design in Long Island</h2>
+
+                        <p>
+                            Over the past decade, Long Island has witnessed a remarkable transformation in how homes
+                            and buildings are designed and constructed. This shift isn't just about following trends—it's
+                            a response to real challenges faced by homeowners and communities.
+                        </p>
+
+                        <blockquote>
+                            "Sustainable architecture is not about sacrifice—it's about creating homes that are more
+                            comfortable, healthier, and cost-effective while protecting our environment for future
+                            generations." — Leading Long Island Architect
+                        </blockquote>
+
+                        <h3>Key Principles of Sustainable Architecture</h3>
+
+                        <ul>
+                            <li><strong>Energy Efficiency:</strong> Utilizing advanced insulation, high-performance windows,
+                            and smart HVAC systems to minimize energy consumption</li>
+                            <li><strong>Passive Solar Design:</strong> Strategically orienting buildings to maximize natural
+                            light and heat from the sun</li>
+                            <li><strong>Water Conservation:</strong> Implementing rainwater harvesting systems and low-flow
+                            fixtures to reduce water usage</li>
+                            <li><strong>Sustainable Materials:</strong> Choosing locally-sourced, recycled, or rapidly
+                            renewable building materials</li>
+                            <li><strong>Indoor Air Quality:</strong> Selecting non-toxic materials and ensuring proper
+                            ventilation for healthier living spaces</li>
+                        </ul>
+
+                        <h2>Innovative Technologies Transforming Home Design</h2>
+
+                        <p>
+                            Modern sustainable architecture leverages cutting-edge technologies that were unimaginable
+                            just a few years ago. These innovations are making eco-friendly homes more accessible and
+                            affordable than ever before.
+                        </p>
+
+                        <h3>Solar Integration</h3>
+
+                        <p>
+                            Solar technology has advanced dramatically, with sleek, efficient panels that can be
+                            seamlessly integrated into roofing systems. Tesla's Solar Roof and similar products are
+                            revolutionizing how we think about renewable energy in residential design.
+                        </p>
+
+                        <h3>Smart Home Systems</h3>
+
+                        <p>
+                            Intelligent home automation systems now allow homeowners to monitor and optimize energy
+                            usage in real-time, learning from patterns and automatically adjusting to maximize efficiency
+                            without sacrificing comfort.
+                        </p>
+
+                        <h2>The Economic Benefits of Sustainable Design</h2>
+
+                        <p>
+                            While sustainable architecture requires thoughtful planning and sometimes higher upfront
+                            costs, the long-term financial benefits are substantial:
+                        </p>
+
+                        <ol>
+                            <li>Reduced energy bills through improved efficiency</li>
+                            <li>Higher property values and increased marketability</li>
+                            <li>Lower maintenance costs with durable, quality materials</li>
+                            <li>Tax incentives and rebates for green building features</li>
+                            <li>Protection against rising energy costs</li>
+                        </ol>
+
+                        <h2>Looking Ahead: The Future is Green</h2>
+
+                        <p>
+                            As we look to the future, sustainable architecture will continue to evolve. Emerging
+                            technologies like carbon-neutral building materials, advanced energy storage systems, and
+                            AI-powered building management will make sustainable homes even more efficient and accessible.
+                        </p>
+
+                        <p>
+                            For Long Island homeowners and developers, embracing sustainable design principles isn't
+                            just an environmental choice—it's a smart investment in the future. Whether you're building
+                            a new home or renovating an existing property, incorporating sustainable design elements
+                            will create a more comfortable, valuable, and environmentally responsible space for
+                            generations to come.
+                        </p>
+                    </article>
+
+                    <!-- Tags -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mt-8">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Tags</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="px-4 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-full text-sm font-medium transition">
+                                Sustainable Architecture
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-full text-sm font-medium transition">
+                                Green Building
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-full text-sm font-medium transition">
+                                Long Island
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-full text-sm font-medium transition">
+                                Eco-Friendly Homes
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 rounded-full text-sm font-medium transition">
+                                Energy Efficiency
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl shadow-lg p-8 mt-8 border-2 border-blue-100">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-3xl flex-shrink-0">
+                                JD
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">About John Doe</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    John is a senior architect at ArchiRect with over 15 years of experience in
+                                    sustainable design. He specializes in residential architecture and has led numerous
+                                    award-winning green building projects across Long Island.
+                                </p>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                                        View Profile →
+                                    </a>
+                                    <span class="text-slate-300">|</span>
+                                    <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                                        More Articles
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4">
+                    <div class="sticky-sidebar space-y-8">
+                        <!-- Table of Contents -->
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Table of Contents</h3>
+                            <nav class="space-y-2">
+                                <a href="#" class="block text-blue-600 hover:text-blue-700 font-medium text-sm py-2 border-l-2 border-blue-600 pl-4">
+                                    The Rise of Sustainable Design
+                                </a>
+                                <a href="#" class="block text-slate-600 hover:text-blue-600 text-sm py-2 border-l-2 border-slate-200 hover:border-blue-600 pl-4 transition">
+                                    Key Principles
+                                </a>
+                                <a href="#" class="block text-slate-600 hover:text-blue-600 text-sm py-2 border-l-2 border-slate-200 hover:border-blue-600 pl-4 transition">
+                                    Innovative Technologies
+                                </a>
+                                <a href="#" class="block text-slate-600 hover:text-blue-600 text-sm py-2 border-l-2 border-slate-200 hover:border-blue-600 pl-4 transition">
+                                    Economic Benefits
+                                </a>
+                                <a href="#" class="block text-slate-600 hover:text-blue-600 text-sm py-2 border-l-2 border-slate-200 hover:border-blue-600 pl-4 transition">
+                                    The Future is Green
+                                </a>
+                            </nav>
+                        </div>
+
+                        <!-- Related Posts -->
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Related Articles</h3>
+                            <div class="space-y-4">
+                                <a href="#" class="block group">
+                                    <div class="flex space-x-3">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-purple-200 to-pink-200 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-purple-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-semibold text-slate-900 group-hover:text-blue-600 transition mb-1">
+                                                Modern Interior Design Trends
+                                            </h4>
+                                            <p class="text-xs text-slate-500">March 12, 2025</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="block group">
+                                    <div class="flex space-x-3">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-orange-200 to-red-200 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-orange-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-semibold text-slate-900 group-hover:text-blue-600 transition mb-1">
+                                                Real Estate Market Trends
+                                            </h4>
+                                            <p class="text-xs text-slate-500">March 10, 2025</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="block group">
+                                    <div class="flex space-x-3">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-teal-200 to-green-200 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-teal-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-semibold text-slate-900 group-hover:text-blue-600 transition mb-1">
+                                                Smart Investment Strategies
+                                            </h4>
+                                            <p class="text-xs text-slate-500">March 8, 2025</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter CTA -->
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg p-6 text-white">
+                            <div class="text-center">
+                                <svg class="w-12 h-12 text-blue-200 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <h3 class="text-xl font-bold mb-2">Stay Updated</h3>
+                                <p class="text-blue-100 text-sm mb-4">
+                                    Get weekly insights delivered to your inbox.
+                                </p>
+                                <input
+                                    type="email"
+                                    placeholder="Your email"
+                                    class="w-full px-4 py-3 rounded-lg mb-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-white"
+                                />
+                                <button class="w-full px-4 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Continue Reading</h2>
+                <div class="w-20 h-1 bg-blue-600 rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article Card 1 -->
+                <article class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-16 h-16 text-purple-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Real Estate</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2 group-hover:text-blue-600 transition">
+                            Top 10 Tips for First-Time Buyers
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Essential advice for navigating the home buying process successfully.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-16 h-16 text-orange-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Market Insights</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2 group-hover:text-blue-600 transition">
+                            Long Island Market Trends 2025
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Understanding current market dynamics and future predictions.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 3 -->
+                <article class="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+                    <div class="overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-teal-200 to-green-200 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-16 h-16 text-teal-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-semibold">Investment</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2 group-hover:text-blue-600 transition">
+                            Smart Property Investment Strategies
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Maximize returns and minimize risks in real estate investment.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <Footer />
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition opacity-0 pointer-events-none"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script is:inline>
+        // Scroll to top button visibility
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.add('opacity-100');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.remove('opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>

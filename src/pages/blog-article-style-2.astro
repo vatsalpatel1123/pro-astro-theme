@@ -1,0 +1,554 @@
+---
+// src/pages/blog-article-style-2.astro
+// Style 2: Full-width magazine layout with parallax
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterSection from '../components/newsletterSection.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Property Investment Strategies for 2025 | ArchiRect Blog</title>
+    <meta name="description" content="Learn how to maximize returns and minimize risks in today's real estate investment landscape with expert strategies and insights.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: #475569;
+            margin-bottom: 1.75rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.75rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: #475569;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content blockquote {
+            border-left: 6px solid #3b82f6;
+            padding-left: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            color: #1e293b;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .article-content .highlight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border-left: 6px solid #3b82f6;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-radius: 0.75rem;
+        }
+
+        .floating-share {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 40;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 73px;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
+            z-index: 50;
+            transition: width 0.1s ease;
+        }
+
+        @media (max-width: 1024px) {
+            .floating-share {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Progress Bar -->
+    <div id="progressBar" class="progress-bar"></div>
+
+    <!-- Navigation -->
+    <Navigation />
+
+    <!-- Floating Share Buttons -->
+    <div class="floating-share">
+        <div class="flex flex-col space-y-3">
+            <button class="w-12 h-12 bg-white hover:bg-blue-600 hover:text-white text-slate-600 rounded-full flex items-center justify-center shadow-lg transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+            </button>
+            <button class="w-12 h-12 bg-white hover:bg-blue-600 hover:text-white text-slate-600 rounded-full flex items-center justify-center shadow-lg transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"/>
+                </svg>
+            </button>
+            <button class="w-12 h-12 bg-white hover:bg-blue-600 hover:text-white text-slate-600 rounded-full flex items-center justify-center shadow-lg transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </button>
+            <div class="border-t border-slate-200 my-2"></div>
+            <button class="w-12 h-12 bg-white hover:bg-blue-600 hover:text-white text-slate-600 rounded-full flex items-center justify-center shadow-lg transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section with Full-Width Image -->
+    <section class="relative h-screen flex items-center justify-center mt-[73px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-teal-300 via-blue-300 to-purple-300 flex items-center justify-center">
+            <svg class="w-64 h-64 text-white opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+        </div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+            <div class="mb-6">
+                <span class="px-5 py-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-full text-sm font-semibold">
+                    Investment Guide
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                Smart Property Investment Strategies for 2025
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
+                Learn how to maximize returns and minimize risks in today's real estate investment landscape
+            </p>
+            <div class="flex items-center justify-center space-x-6 flex-wrap gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        EB
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-lg">Emily Brown</p>
+                        <p class="text-blue-100 text-sm">Investment Specialist</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-white/30"></div>
+                <div class="text-left">
+                    <p class="text-blue-100 text-sm">Published</p>
+                    <p class="font-semibold">March 8, 2025</p>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-white/30"></div>
+                <div class="text-left">
+                    <p class="text-blue-100 text-sm">Reading Time</p>
+                    <p class="font-semibold">12 minutes</p>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 article-content">
+            <!-- Introduction -->
+            <div class="text-center mb-16">
+                <p class="text-2xl text-slate-700 leading-relaxed font-light">
+                    Real estate investment has long been a cornerstone of wealth building, but the landscape
+                    is constantly evolving. In 2025, successful investors need to adapt to new market dynamics,
+                    technological innovations, and changing economic conditions.
+                </p>
+            </div>
+
+            <p>
+                The real estate market in 2025 presents unique opportunities and challenges for investors.
+                With interest rates stabilizing, remote work trends continuing to reshape housing demand,
+                and sustainability becoming increasingly important, investors must be strategic and well-informed
+                to maximize their returns.
+            </p>
+
+            <p>
+                This comprehensive guide will walk you through proven investment strategies, emerging trends,
+                and practical tips to help you build a successful real estate portfolio in today's market.
+            </p>
+
+            <h2>Understanding Today's Real Estate Investment Landscape</h2>
+
+            <p>
+                The post-pandemic real estate market has fundamentally changed how we think about property
+                investment. Remote work has redistributed demand across different geographic areas, while
+                technological advancements have made property management and investment more accessible
+                than ever before.
+            </p>
+
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Key Market Insight</h4>
+                <p class="text-slate-700 mb-0">
+                    In 2025, the most successful real estate investors are those who understand that property
+                    investment is no longer just about location, location, location—it's about data,
+                    demographics, and adaptability.
+                </p>
+            </div>
+
+            <h3>The Five Pillars of Smart Real Estate Investment</h3>
+
+            <ol>
+                <li><strong>Market Research and Analysis:</strong> Understanding local market trends, employment
+                growth, and demographic shifts before making investment decisions</li>
+                <li><strong>Financial Planning:</strong> Creating realistic budgets that account for all costs,
+                including hidden expenses and market fluctuations</li>
+                <li><strong>Risk Management:</strong> Diversifying your portfolio and maintaining adequate
+                cash reserves for unexpected challenges</li>
+                <li><strong>Property Selection:</strong> Identifying properties with strong appreciation
+                potential and reliable cash flow</li>
+                <li><strong>Professional Network:</strong> Building relationships with real estate agents,
+                property managers, contractors, and financial advisors</li>
+            </ol>
+
+            <h2>Strategy #1: The Buy-and-Hold Approach</h2>
+
+            <p>
+                The buy-and-hold strategy remains one of the most reliable methods for building long-term
+                wealth through real estate. This approach involves purchasing properties in growing markets
+                and holding them for extended periods to benefit from appreciation and rental income.
+            </p>
+
+            <blockquote>
+                "The best time to buy real estate was 20 years ago. The second best time is today—if you
+                have a solid strategy and understand the fundamentals." — Real Estate Investment Expert
+            </blockquote>
+
+            <h3>Benefits of Buy-and-Hold:</h3>
+
+            <ul>
+                <li>Steady passive income through rental payments</li>
+                <li>Long-term appreciation in property value</li>
+                <li>Tax advantages including depreciation and mortgage interest deductions</li>
+                <li>Equity buildup as tenants pay down your mortgage</li>
+                <li>Hedge against inflation</li>
+            </ul>
+
+            <h2>Strategy #2: Value-Add Investments</h2>
+
+            <p>
+                Value-add investing involves purchasing properties below market value and improving them
+                to increase both rental income and property value. This strategy requires more active
+                management but can generate significant returns in shorter timeframes.
+            </p>
+
+            <p>
+                Successful value-add investments typically focus on cosmetic improvements, unit upgrades,
+                improved management, or repositioning the property to attract higher-paying tenants.
+            </p>
+
+            <h3>Common Value-Add Opportunities:</h3>
+
+            <ul>
+                <li>Kitchen and bathroom renovations</li>
+                <li>Energy-efficient upgrades (solar panels, new windows, insulation)</li>
+                <li>Adding additional units or square footage</li>
+                <li>Improving curb appeal and common areas</li>
+                <li>Implementing professional property management</li>
+            </ul>
+
+            <h2>Strategy #3: Real Estate Investment Trusts (REITs)</h2>
+
+            <p>
+                For investors who want real estate exposure without the responsibilities of direct property
+                ownership, REITs offer an accessible alternative. These publicly-traded companies own and
+                operate income-producing real estate across various sectors.
+            </p>
+
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-slate-900 mb-3">REIT Advantages</h4>
+                <p class="text-slate-700 mb-0">
+                    REITs provide liquidity, diversification, and professional management while requiring
+                    minimal capital to get started. They're ideal for investors who want to add real estate
+                    to their portfolio without dealing with tenants, toilets, and trash.
+                </p>
+            </div>
+
+            <h2>Risk Management Essentials</h2>
+
+            <p>
+                No investment strategy is complete without proper risk management. Real estate investing
+                involves significant capital and long-term commitments, making it essential to protect
+                yourself against potential downsides.
+            </p>
+
+            <h3>Key Risk Management Practices:</h3>
+
+            <ul>
+                <li><strong>Diversification:</strong> Don't put all your capital into a single property or market</li>
+                <li><strong>Due Diligence:</strong> Thoroughly inspect properties and review all documentation</li>
+                <li><strong>Cash Reserves:</strong> Maintain 6-12 months of operating expenses in reserve</li>
+                <li><strong>Insurance:</strong> Carry adequate property, liability, and rental loss insurance</li>
+                <li><strong>Legal Protection:</strong> Use proper legal entities and contracts to protect assets</li>
+            </ul>
+
+            <h2>Leveraging Technology for Better Investments</h2>
+
+            <p>
+                Modern real estate investors have access to powerful tools and platforms that previous
+                generations could only dream of. From property analysis software to crowdfunding platforms,
+                technology has democratized real estate investing.
+            </p>
+
+            <p>
+                Smart investors use technology to analyze markets, screen properties, manage portfolios,
+                and even find off-market deals. Platforms offering virtual tours, AI-powered valuation
+                tools, and blockchain-based transactions are transforming how we invest in real estate.
+            </p>
+
+            <h2>The Future of Real Estate Investment</h2>
+
+            <p>
+                Looking ahead, several trends will shape real estate investment opportunities in the coming years:
+            </p>
+
+            <ul>
+                <li>Continued growth in remote work driving demand in secondary and tertiary markets</li>
+                <li>Increasing focus on sustainable and energy-efficient properties</li>
+                <li>Rise of co-living and flexible housing solutions</li>
+                <li>Growing importance of technology infrastructure in property values</li>
+                <li>Demographic shifts creating opportunities in senior housing and multi-generational properties</li>
+            </ul>
+
+            <h2>Taking Action: Your Next Steps</h2>
+
+            <p>
+                Real estate investment success doesn't happen overnight. It requires education, planning,
+                and consistent action. Whether you're just starting out or looking to expand your existing
+                portfolio, the key is to begin with a clear strategy and remain adaptable as markets evolve.
+            </p>
+
+            <p>
+                Start by educating yourself about your local market, connecting with experienced investors
+                and professionals, and analyzing potential deals. Remember that every successful real estate
+                investor started with their first property—the important thing is to take that first step
+                with knowledge and confidence.
+            </p>
+
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Ready to Start Investing?</h4>
+                <p class="text-slate-700 mb-4">
+                    Contact our investment team for personalized guidance on building your real estate
+                    portfolio. We offer free consultations and market analysis to help you make informed decisions.
+                </p>
+                <a href="/contact" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+                    Schedule a Consultation
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Author Bio Section -->
+    <section class="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="w-32 h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-4xl flex-shrink-0">
+                        EB
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold text-slate-900 mb-3">About Emily Brown</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Emily is a seasoned real estate investment specialist with over 12 years of experience
+                            helping clients build successful property portfolios. She holds a Master's degree in
+                            Real Estate Finance and is a licensed real estate broker specializing in investment
+                            properties across Long Island and the greater New York area.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+                                View All Articles
+                            </a>
+                            <a href="#" class="px-6 py-3 bg-slate-100 text-slate-900 rounded-lg hover:bg-slate-200 transition font-semibold">
+                                Contact Emily
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Continue Reading</h2>
+                <p class="text-xl text-slate-600">More insights to help you succeed in real estate</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Related Article 1 -->
+                <article class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <div class="h-64 bg-gradient-to-br from-blue-200 to-slate-300 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-20 h-20 text-blue-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Architecture</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-3 group-hover:text-blue-600 transition">
+                        Sustainable Architecture Trends
+                    </h3>
+                    <p class="text-slate-600 mb-4">
+                        Discover how modern sustainable design is transforming Long Island homes.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                        Read Article
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Related Article 2 -->
+                <article class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <div class="h-64 bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-20 h-20 text-purple-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="px-4 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Market Insights</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-3 group-hover:text-blue-600 transition">
+                        2025 Market Forecast
+                    </h3>
+                    <p class="text-slate-600 mb-4">
+                        Expert predictions and trends shaping the real estate market this year.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                        Read Article
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Related Article 3 -->
+                <article class="group">
+                    <div class="overflow-hidden rounded-2xl mb-6 shadow-lg">
+                        <div class="h-64 bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center group-hover:scale-105 transition duration-300">
+                            <svg class="w-20 h-20 text-orange-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="px-4 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Home Buying</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-3 group-hover:text-blue-600 transition">
+                        First-Time Buyer's Guide
+                    </h3>
+                    <p class="text-slate-600 mb-4">
+                        Everything you need to know about purchasing your first home.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center">
+                        Read Article
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <NewsletterSection />
+
+<!-- Footer -->
+    <Footer />
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white w-14 h-14 rounded-full shadow-xl hover:bg-blue-700 transition opacity-0 pointer-events-none z-50"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script is:inline>
+        // Scroll to top button visibility
+        const scrollBtn = document.getElementById('scrollToTop');
+        const progressBar = document.getElementById('progressBar');
+
+        window.addEventListener('scroll', () => {
+            // Scroll to top button
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.add('opacity-100');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.remove('opacity-100');
+            }
+
+            // Progress bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

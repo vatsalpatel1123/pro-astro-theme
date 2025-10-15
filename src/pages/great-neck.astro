@@ -1,0 +1,687 @@
+---
+// src/pages/great-neck.astro
+// Location Page: Great Neck, NY
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import LocationForm from '../components/locationForm.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Sell Your House Fast in Great Neck NY | Pro Home Buyers</title>
+    <meta name="description" content="Pro Home Buyers offers fast, fair, and private cash offers for homes in Great Neck, NY. No repairs, no commissions, close on your timeline.">
+    <meta name="keywords" content="sell house fast Great Neck NY, cash home buyers Great Neck, we buy houses Great Neck NY, sell inherited property Great Neck, off-market buyers Long Island">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sell Your House Fast in Great Neck NY | Pro Home Buyers">
+    <meta property="og:description" content="Pro Home Buyers offers fast, fair, and private cash offers for homes in Great Neck, NY. No repairs, no commissions, close on your timeline.">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US-NY">
+    <meta name="geo.placename" content="Great Neck, New York">
+    <meta name="geo.position" content="40.8007;-73.7285">
+    <meta name="ICBM" content="40.8007, -73.7285">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Pro Home Buyers",
+      "description": "Cash home buyers in Great Neck, NY",
+      "url": "https://prohomebuyers.com/great-neck",
+      "telephone": "+1-718-288-7300",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manhasset",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Great Neck",
+        "containedIn": {
+          "@type": "State",
+          "name": "New York"
+        }
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-pattern {
+            background-image:
+                linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .icon-container {
+            transform: scale(1.1);
+        }
+
+        .pulse-button {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <Navigation />
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 hero-pattern py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Location Badge -->
+                <div class="inline-flex items-center mb-6 bg-white px-5 py-2 rounded-full shadow-md">
+                    <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span class="text-blue-800 font-semibold text-sm">Serving Great Neck, NY</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                    Sell Your Great Neck Home <br/>
+                    <span class="gradient-text">Privately and On Your Terms</span>
+                </h1>
+
+                <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto">
+                    We're your local Great Neck cash home buyers — helping homeowners sell quickly,
+                    privately, and without realtor fees.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="#contact-form" class="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition font-semibold text-lg shadow-lg hover:shadow-xl pulse-button">
+                        Get My Offer Now
+                    </a>
+                    <a href="tel:7182887300" class="bg-white text-slate-900 px-10 py-4 rounded-full hover:bg-slate-50 transition font-semibold text-lg border-2 border-slate-200 hover:border-blue-600 shadow-lg">
+                        Call (718) 288-7300
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-6 justify-center text-sm text-slate-600">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">No Repairs Needed</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">Zero Commissions</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">Close on Your Timeline</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">100% Confidential</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Introduction Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block mb-6">
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            Local & Trusted Since 1983
+                        </span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                        Your Trusted Local Home Buyer in <span class="gradient-text">Great Neck, NY</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        Pro Home Buyers is a Manhasset-based company purchasing homes directly from Great Neck
+                        homeowners who value privacy, speed, and convenience. With over 40 years of combined
+                        real estate and development experience across Long Island, we provide fair,
+                        development-based offers without commissions, repairs, or delays.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                        Whether you're facing foreclosure, dealing with an inherited property, or simply want
+                        a private sale without the hassle of traditional listings, we're here to help Great Neck
+                        homeowners navigate their unique situations with compassion and professionalism.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center text-slate-700">
+                            <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-medium">40+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center text-slate-700">
+                            <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-medium">500+ Homes Purchased</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-blue-100 to-slate-100 rounded-3xl p-8 shadow-2xl border border-slate-200">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <div class="flex items-center justify-center mb-6">
+                                <svg class="w-32 h-32 text-blue-600 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">Great Neck, NY</h3>
+                                <p class="text-slate-600 mb-4">Proudly serving your community</p>
+                                <div class="space-y-2 text-sm text-slate-600">
+                                    <p>📍 Based in Manhasset, NY</p>
+                                    <p>🏡 Serving all Great Neck neighborhoods</p>
+                                    <p>⚡ 24-hour offer response time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">
+                    How to Sell Your Great Neck Home Fast
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    Our simple 3-step process makes selling your home quick, easy, and stress-free
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+                            1
+                        </div>
+                        <div class="icon-container w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mt-2">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Submit Your Info</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Tell us about your Great Neck property through our simple online form.
+                            It takes less than 2 minutes — no obligation required.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+                            2
+                        </div>
+                        <div class="icon-container w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mt-2">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">5-Minute Call</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            One of our local team members will give you a quick call to confirm
+                            details and understand your timeline. No pressure, just a friendly conversation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+                            3
+                        </div>
+                        <div class="icon-container w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mt-2">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Get Your Offer</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Receive your fair cash offer within 24 hours. Accept it and close on your
+                            timeline — as fast as 7 days or when you're ready.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact-form" class="inline-flex items-center px-10 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition font-semibold text-lg shadow-lg">
+                    Request Your Great Neck Offer Now
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Great Neck Homeowners Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">
+                    Why Great Neck Homeowners Choose Us
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    We're not your typical "we buy houses" company — here's what makes us different
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-lg border border-blue-100">
+                    <div class="icon-container w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Local Expertise</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Born and based in Manhasset, we've been serving Great Neck homeowners for decades.
+                        We understand your neighborhood, property values, and local market dynamics.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Deep knowledge of Great Neck real estate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Family-owned Long Island company</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Personal service from local experts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-lg border border-blue-100">
+                    <div class="icon-container w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Fair, Transparent Offers</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Our offers are based on true development potential and market value — not lowball tactics.
+                        We explain our numbers clearly and answer all your questions.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Development-based valuations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>No hidden fees or surprises</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Clear explanation of our process</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-lg border border-blue-100">
+                    <div class="icon-container w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Private, Stress-Free Process</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        No listings, no repairs, no showings. Your sale remains completely private,
+                        and we handle all the paperwork and closing details.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>100% confidential transactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Sell as-is in any condition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Close on your preferred timeline</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Situations We Help With -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">
+                    Situations We Help Great Neck Homeowners With
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    No matter your situation, Pro Home Buyers provides fair, fast, and private offers
+                    across Great Neck and Nassau County
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Situation 1 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Foreclosure or Financial Stress</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Behind on mortgage payments? We can help you avoid foreclosure and protect your credit
+                        with a quick sale before the bank takes action.
+                    </p>
+                </div>
+
+                <!-- Situation 2 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Inherited or Probate Property</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Dealing with a loved one's estate? We simplify the process by buying inherited homes
+                        as-is, handling all probate complications with compassion.
+                    </p>
+                </div>
+
+                <!-- Situation 3 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tax Liens or Code Violations</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Facing delinquent property taxes or costly code violations? We'll buy your property
+                        quickly, helping you resolve these issues and move forward.
+                    </p>
+                </div>
+
+                <!-- Situation 4 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Downsizing or Relocation</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Need to relocate quickly for work or downsize to a smaller space? We offer flexible
+                        closing dates that work with your timeline.
+                    </p>
+                </div>
+
+                <!-- Situation 5 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Vacant or Outdated Homes</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Tired of maintaining an outdated or vacant property? We buy homes in any condition —
+                        no repairs, cleaning, or updates required.
+                    </p>
+                </div>
+
+                <!-- Situation 6 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="icon-container w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Land or Development Sale</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Have a teardown, vacant lot, or development opportunity in Great Neck?
+                        We specialize in land acquisitions and redevelopment projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">
+                    Get Your Great Neck Cash Offer Today
+                </h2>
+                <p class="text-xl text-slate-600">
+                    Fill out the form below and receive your no-obligation offer within 24 hours
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl shadow-xl p-8 md:p-12 border border-slate-200">
+                <LocationForm />
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Sell Your Great Neck Property Privately?
+            </h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                Get your no-obligation cash offer today. No pressure, no games—just a fair offer
+                from Great Neck's most trusted home buyers.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="#contact-form" class="bg-white text-blue-600 px-10 py-4 rounded-full hover:bg-blue-50 transition font-bold text-lg shadow-2xl inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Get My Offer Now
+                </a>
+                <a href="tel:7182887300" class="bg-blue-700 text-white px-10 py-4 rounded-full hover:bg-blue-800 transition font-bold text-lg border-2 border-blue-500 inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Call or Text (718) 288-7300
+                </a>
+            </div>
+            <p class="text-blue-200 flex items-center justify-center flex-wrap gap-4">
+                <span class="inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    No Obligations
+                </span>
+                <span class="inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Fair Cash Offers
+                </span>
+                <span class="inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Close on Your Timeline
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO Footer Section -->
+    <section class="py-16 bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl">
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    Cash Home Buyers Serving Great Neck and Long Island
+                </h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    Pro Home Buyers purchases homes in Great Neck and across Long Island — including Manhasset,
+                    Roslyn, Port Washington, Glen Cove, Kings Point, Sands Point, and throughout Nassau County.
+                    We buy houses as-is, pay cash, and close on your timeline. Whether you're facing foreclosure,
+                    dealing with an inherited property, or simply need a private sale, we're here to help.
+                </p>
+                <p class="text-lg leading-relaxed mb-6">
+                    With over 40 years of combined real estate and development experience, our locally-based team
+                    understands the unique challenges Great Neck homeowners face. We provide fair, development-based
+                    offers without the hassle of traditional real estate sales — no repairs, no commissions,
+                    no waiting for buyers.
+                </p>
+
+                <div class="border-t border-slate-700 pt-6 mt-8">
+                    <h3 class="text-lg font-semibold text-white mb-3">Keywords & Services:</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Sell house fast Great Neck NY</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Cash home buyers Great Neck</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">We buy houses Great Neck NY</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Sell inherited property Great Neck</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Off-market buyers Long Island</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Great Neck real estate investors</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Sell home privately Nassau County</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition opacity-0 pointer-events-none z-50"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script is:inline>
+        // Scroll to top button visibility
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.add('opacity-100');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollBtn.classList.remove('opacity-100');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

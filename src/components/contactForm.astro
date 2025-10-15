@@ -1,0 +1,129 @@
+---
+// contactForm.astro
+---
+
+<form id="contactForm" class="common-form bg-slate-50 rounded-2xl p-8 md:p-10 shadow-lg space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label for="fullName" class="block text-sm font-semibold text-slate-700 mb-2">
+                Full Name *
+            </label>
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                placeholder="John Smith"
+            />
+        </div>
+
+        <div>
+            <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">
+                Email Address *
+            </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                placeholder="john@example.com"
+            />
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label for="phone" class="block text-sm font-semibold text-slate-700 mb-2">
+                Phone Number *
+            </label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                placeholder="(718) 288-7300"
+            />
+        </div>
+
+        <div>
+            <label for="propertyType" class="block text-sm font-semibold text-slate-700 mb-2">
+                Type of Property *
+            </label>
+            <select
+                id="propertyType"
+                name="propertyType"
+                required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition appearance-none"
+            >
+                <option value="">Select property type</option>
+                <option value="house">Single Family House</option>
+                <option value="multi-family">Multi-Family</option>
+                <option value="land">Land</option>
+                <option value="condo">Condo/Townhouse</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="propertyAddress" class="block text-sm font-semibold text-slate-700 mb-2">
+            Property Address *
+        </label>
+        <input
+            type="text"
+            id="propertyAddress"
+            name="propertyAddress"
+            required
+            class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+            placeholder="123 Main Street, Manhasset, NY 11030"
+        />
+    </div>
+
+    <div>
+        <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">
+            Tell Us About Your Property
+        </label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+            placeholder="Share any details about your property, your timeline, or questions you have..."
+        ></textarea>
+    </div>
+
+    <div class="flex items-start">
+        <input
+            type="checkbox"
+            id="contactConsent"
+            name="contactConsent"
+            class="w-5 h-5 mt-1 text-blue-600 border-slate-300 rounded focus:ring-2 focus:ring-blue-500"
+        />
+        <label for="contactConsent" class="ml-3 text-sm text-slate-600">
+            I'd like to receive a call or text about my property. By submitting this form, I consent to be contacted by Pro Home Buyers regarding my property inquiry.
+        </label>
+    </div>
+
+    <button
+        type="submit"
+        class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition font-bold text-lg shadow-lg hover:shadow-xl"
+    >
+        Send Message
+    </button>
+
+    <p class="text-center text-sm text-slate-500">
+        * Required fields
+    </p>
+</form>
+
+<script>
+    import { initFormHandler } from '../scripts/formHandler.js';
+    if (typeof window !== 'undefined') {
+        document.addEventListener('DOMContentLoaded', () => {
+            initFormHandler();
+        });
+    }
+</script>
