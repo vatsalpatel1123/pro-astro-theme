@@ -1,0 +1,554 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { Camera, Users, Calendar, MessageSquare, FileCheck, TrendingUp, CheckCircle, ChevronDown, Menu, X, Star } from 'lucide-react';
+
+const DentalLandingPage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Intersection Observer for fade-in animations
+      const sections = document.querySelectorAll('.fade-in-section');
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.75) {
+          section.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const GlitchText = ({ children, className = '' }) => {
+    return (
+      <span className={`glitch-text ${className}`} data-text={children}>
+        {children}
+      </span>
+    );
+  };
+
+  const features = [
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Lead Generation",
+      description: "AI-optimized marketing campaigns that automatically target high-intent patients in your area.",
+      stat: "3x More Leads",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: <Calendar className="w-8 h-8" />,
+      title: "Patient Scheduling",
+      description: "24/7 conversational booking system that handles appointments while you sleep.",
+      stat: "90% Auto-Booked",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: <MessageSquare className="w-8 h-8" />,
+      title: "Consult Conversion",
+      description: "AI-trained responses that convert 8 out of 10 consultation inquiries into scheduled visits.",
+      stat: "80% Conversion",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: <FileCheck className="w-8 h-8" />,
+      title: "Case Acceptance",
+      description: "Personalized treatment plans with automated follow-ups that close high-value cases.",
+      stat: "2x Case Value",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Practice Operations",
+      description: "Streamlined workflows that reduce administrative burden by 60% and free up your team.",
+      stat: "60% Less Work",
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      icon: <Camera className="w-8 h-8" />,
+      title: "Patient Education",
+      description: "Automated treatment education that increases patient understanding and acceptance.",
+      stat: "95% Satisfaction",
+      color: "from-teal-500 to-cyan-500"
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Dr. Sarah Mitchell",
+      role: "Cosmetic Dentist",
+      image: "https://i.pravatar.cc/150?img=1",
+      text: "We increased our consult bookings by 300% in the first 90 days. The AI handles everything perfectly.",
+      rating: 5
+    },
+    {
+      name: "Dr. James Chen",
+      role: "Orthodontist",
+      image: "https://i.pravatar.cc/150?img=12",
+      text: "This isn't just good—it's transformative. We're closing cases we would have lost before.",
+      rating: 5
+    },
+    {
+      name: "Dr. Maria Rodriguez",
+      role: "General Practice",
+      image: "https://i.pravatar.cc/150?img=5",
+      text: "Our team loves it. No more missed calls, and our schedule is always full with quality patients.",
+      rating: 5
+    }
+  ];
+
+  const faqs = [
+    { q: "How does the system integrate with my practice?", a: "Our system seamlessly integrates with your existing practice management software through secure APIs. Setup takes less than 24 hours with our dedicated support team." },
+    { q: "Will this replace my staff?", a: "No, it enhances your team's capabilities. The AI handles repetitive tasks, allowing your staff to focus on high-value patient interactions and complex care coordination." },
+    { q: "What results can I expect?", a: "Most practices see 25+ new patient consults per month within 90 days, with an average 80% conversion rate to scheduled appointments." },
+    { q: "Is my patient data secure?", a: "Yes, we're fully HIPAA compliant with end-to-end encryption, regular security audits, and SOC 2 Type II certification." },
+    { q: "How much does it cost?", a: "Our pricing is performance-based. You only pay when we deliver results. Contact us for a custom quote based on your practice size and goals." },
+    { q: "Can I try it before committing?", a: "Absolutely! We offer a 30-day trial with full access to all features. No credit card required to start." }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .glitch-text {
+          position: relative;
+          display: inline-block;
+          animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+          0%, 100% { transform: translate(0); }
+          33% { transform: translate(-2px, 2px); }
+          66% { transform: translate(2px, -2px); }
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+          content: attr(data-text);
+          position: absolute;
+          left: 0;
+          opacity: 0;
+        }
+        
+        .glitch-text:hover::before {
+          animation: glitch-before 0.3s infinite;
+          color: #0ea5e9;
+          opacity: 0.8;
+        }
+        
+        .glitch-text:hover::after {
+          animation: glitch-after 0.3s infinite;
+          color: #ec4899;
+          opacity: 0.8;
+        }
+        
+        @keyframes glitch-before {
+          0% { transform: translate(-2px, -2px); }
+          50% { transform: translate(2px, 2px); }
+          100% { transform: translate(-2px, -2px); }
+        }
+        
+        @keyframes glitch-after {
+          0% { transform: translate(2px, 2px); }
+          50% { transform: translate(-2px, -2px); }
+          100% { transform: translate(2px, 2px); }
+        }
+        
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-section.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .hover-tilt {
+          transition: transform 0.3s ease;
+        }
+        
+        .hover-tilt:hover {
+          transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+        }
+        
+        .btn-hover {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .btn-hover::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-hover:hover::before {
+          width: 300px;
+          height: 300px;
+        }
+        
+        .btn-hover:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        
+        .card-glow {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+          transition: box-shadow 0.3s ease;
+        }
+        
+        .card-glow:hover {
+          box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .smooth-scroll {
+          scroll-behavior: smooth;
+        }
+      `}</style>
+
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Camera className="w-6 h-6" />
+              </div>
+              <span className="text-xl font-bold">Practice<span className="gradient-text">Protect</span></span>
+            </div>
+            
+            <div className="hidden md:flex space-x-8">
+              {['Features', 'How It Works', 'Testimonials', 'FAQ'].map(item => (
+                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-blue-400 transition-colors duration-200">
+                  {item}
+                </a>
+              ))}
+            </div>
+            
+            <button className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg btn-hover font-semibold">
+              Get Started
+            </button>
+            
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden">
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
+        </div>
+        
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-slate-900 border-t border-slate-800">
+            <div className="px-4 py-4 space-y-3">
+              {['Features', 'How It Works', 'Testimonials', 'FAQ'].map(item => (
+                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="block py-2 hover:text-blue-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  {item}
+                </a>
+              ))}
+              <button className="w-full px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg btn-hover font-semibold mt-4">
+                Get Started
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-slate-950"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center fade-in-section is-visible">
+            <div className="inline-block mb-6 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full">
+              <span className="text-blue-400 text-sm font-semibold">🚀 AI-Powered Growth Engine</span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+              <GlitchText>Helping Practices Get</GlitchText>
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                25 Attended Consults
+              </span>
+              <br />
+              <span className="text-3xl sm:text-4xl lg:text-5xl">of the Exact Cases They Want</span>
+              <br />
+              <span className="text-2xl sm:text-3xl lg:text-4xl text-slate-400">in 90 days - Guaranteed</span>
+            </h1>
+            
+            <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+              Our system takes responsibility for your ROI. PPC queries, from patient targeting to lead-captioned.
+            </p>
+            
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-bold btn-hover shadow-xl mb-8">
+              Get Access
+            </button>
+            
+            <div className="flex items-center justify-center space-x-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map(i => (
+                    <img key={i} src={`https://i.pravatar.cc/40?img=${i}`} className="w-8 h-8 rounded-full border-2 border-slate-900" alt="" />
+                  ))}
+                </div>
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                </div>
+              </div>
+              <span className="text-slate-400">4.9/5 Rating</span>
+              <span className="text-slate-400">From practices across the U.S.A.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-20 px-4 bg-slate-900/50">
+        <div className="max-w-6xl mx-auto fade-in-section">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              The Revenue Leak <span className="text-red-400">Private Practices Don't Know They Have</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4">
+              {[
+                'Wasted ad spend targeting wrong patients',
+                'Marketing ineffectiveness',
+                'Poor & expensive franchise fees',
+                'High cancels & low/no-shows',
+                'First class inefficiencies'
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start space-x-3 p-4 bg-slate-800/50 rounded-lg hover-tilt card-glow">
+                  <CheckCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
+                  <span className="text-slate-300">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="relative">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop" alt="Stressed dentist" className="rounded-2xl shadow-2xl hover-tilt" />
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-red-500 to-orange-500 p-6 rounded-xl shadow-xl">
+                <div className="text-3xl font-bold">$200K+</div>
+                <div className="text-sm">Lost Revenue/Year</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 fade-in-section">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              Introducing <span className="gradient-text">"The Automated Practice Protect"</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <div key={idx} className="fade-in-section bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl hover-tilt card-glow border border-slate-700/50" style={{ transitionDelay: `${idx * 100}ms` }}>
+                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 float-animation`} style={{ animationDelay: `${idx * 0.5}s` }}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-slate-400 mb-4">{feature.description}</p>
+                <div className="text-3xl font-bold gradient-text">{feature.stat}</div>
+                <button className="mt-4 text-blue-400 hover:text-blue-300 transition-colors font-semibold">
+                  Learn More →
+                </button>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12 fade-in-section">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-bold btn-hover shadow-xl">
+              Get Access
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 fade-in-section">
+            <h2 className="text-4xl font-bold mb-4">
+              THE <span className="gradient-text">#1 AI-Powered</span> Growth Partner
+            </h2>
+            <p className="text-xl text-slate-300">Why Dental Practices Across the USA Choose Us</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 fade-in-section">
+            {[
+              { label: 'Average PPC ROI', value: '11.2x', icon: <TrendingUp /> },
+              { label: 'New Patients/Month', value: '25+', icon: <Users /> },
+              { label: 'Client Success Rate', value: '98%', icon: <CheckCircle /> }
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center p-8 bg-slate-800/50 rounded-2xl hover-tilt card-glow">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mb-4">
+                  {React.cloneElement(stat.icon, { className: 'w-8 h-8' })}
+                </div>
+                <div className="text-5xl font-black gradient-text mb-2">{stat.value}</div>
+                <div className="text-slate-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 p-8 bg-slate-800/50 rounded-2xl border border-blue-500/20 fade-in-section">
+            <p className="text-center text-lg">
+              "The Automated Practice Protect" generates <span className="font-bold text-blue-400">1.2+ PPC Clients</span> for <span className="font-bold text-purple-400">$520+ - $820+</span> per new client/patient
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 fade-in-section">
+            <div className="text-blue-400 font-semibold mb-2">TESTIMONIALS</div>
+            <h2 className="text-4xl font-bold">What Our Partners Have to Say</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <div key={idx} className="fade-in-section bg-slate-800/50 p-8 rounded-2xl hover-tilt card-glow" style={{ transitionDelay: `${idx * 100}ms` }}>
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                </div>
+                <p className="text-slate-300 mb-6 italic">"{testimonial.text}"</p>
+                <div className="flex items-center space-x-4">
+                  <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full" />
+                  <div>
+                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="text-sm text-slate-400">{testimonial.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12 fade-in-section">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-bold btn-hover shadow-xl">
+              Get Instant Access
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 px-4 bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 fade-in-section">
+            <div className="text-blue-400 font-semibold mb-2">STILL GOT QUESTIONS?</div>
+            <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
+          </div>
+          
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="fade-in-section bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50 hover-tilt" style={{ transitionDelay: `${idx * 50}ms` }}>
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-slate-700/30 transition-colors"
+                >
+                  <span className="font-semibold text-lg">{faq.q}</span>
+                  <ChevronDown className={`w-5 h-5 transition-transform ${expandedFaq === idx ? 'rotate-180' : ''}`} />
+                </button>
+                {expandedFaq === idx && (
+                  <div className="px-6 pb-6 text-slate-400">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12 fade-in-section">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-bold btn-hover shadow-xl">
+              IMPLEMENT THIS FOR MY PRACTICE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Camera className="w-6 h-6" />
+                </div>
+                <span className="text-xl font-bold">Practice<span className="gradient-text">Protect</span></span>
+              </div>
+              <p className="text-slate-400 text-sm">
+                AI-powered growth solutions for modern dental practices.
+              </p>
+            </div>
+            
+            {[
+              { title: 'Product', links: ['Features', 'Pricing', 'Integration', 'Support'] },
+              { title: 'Company', links: ['About', 'Blog', 'Careers', 'Contact'] },
+              { title: 'Legal', links: ['Privacy Policy', 'Terms & Conditions'] }
+            ].map((col, idx) => (
+              <div key={idx}>
+                <h3 className="font-semibold mb-4">{col.title}</h3>
+                <ul className="space-y-2">
+                  {col.links.map(link => (
+                    <li key={link}>
+                      <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">{link}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          
+          <div className="pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
+            <p>© 2024 All rights reserved • Made With Privacy policy & terms & Conditions</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default DentalLandingPage;

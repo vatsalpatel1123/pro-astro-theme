@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Dental Studio | San Francisco and Mountain View</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    @font-face {
+      font-family: 'Recoleta';
+      src: url('https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c8145497c4408e_font.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #704D47;
+      --secondary: #F5EEEC;
+      --accent: #B98E63;
+      --text-dark: #836B64;
+      --text-light: #A39D9C;
+      --bg-light: #F2EAE9;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--primary);
+      overflow-x: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .recoleta {
+      font-family: 'Recoleta', serif;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(242, 234, 233, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 2px 20px rgba(112, 77, 71, 0.1);
+    }
+
+    .logo-wrapper img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent);
+    }
+
+    .book-now-modal, .call-now-modal {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .book-now-modal:hover, .call-now-modal:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .container-large {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .hero-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero-top-text {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .h1 {
+      font-family: 'Recoleta', serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .hero-bottom-text {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .appointment_wrapper {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Marquee Images */
+    .hero-right {
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+    }
+
+    .marquee {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .track-vertical {
+      position: absolute;
+      animation: marquee-vertical 40s linear infinite;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @keyframes marquee-vertical {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50%); }
+    }
+
+    .icon-container img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(112, 77, 71, 0.1);
+    }
+
+    /* Transparency Section */
+    .section {
+      padding: 6rem 5%;
+      text-align: center;
+    }
+
+    .h2 {
+      font-family: 'Recoleta', serif;
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .subtext-large {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 3rem;
+    }
+
+    /* Card Grid */
+    .c-cards-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .c-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(112, 77, 71, 0.08);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .c-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .c-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(112, 77, 71, 0.15);
+    }
+
+    .transparency-lottie {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .card-subtitle {
+      font-family: 'Recoleta', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .transparency-text {
+      color: var(--text-dark);
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 6rem 5%;
+      background: white;
+    }
+
+    .title-wrapper-gallery {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .subtext-wrapper {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .swiper-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .slider-button-left, .slider-button-right {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .slider-button-left { left: 20px; }
+    .slider-button-right { right: 20px; }
+
+    .slider-button-left:hover, .slider-button-right:hover {
+      background: var(--accent);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-button-left::after {
+      content: '←';
+      color: white;
+      font-size: 24px;
+    }
+
+    .slider-button-right::after {
+      content: '→';
+      color: white;
+      font-size: 24px;
+    }
+
+    /* Amenities Section */
+    .amenities-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 5%;
+    }
+
+    .amenities-title {
+      font-family: 'Recoleta', serif;
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    .amenities-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .amenities-inner-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .amenities-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .amenities-text {
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 6rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .faq-question-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-question-bar {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question-bar:hover {
+      background: var(--secondary);
+    }
+
+    .question-title {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-question-wrap.active .faq-content {
+      max-height: 500px;
+      padding: 1.5rem;
+    }
+
+    .faq-question-wrap.active .image-9 {
+      transform: rotate(45deg);
+    }
+
+    .image-9 {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Testimonials Section */
+    .testimonial-section {
+      padding: 6rem 5%;
+      background: white;
+    }
+
+    .testimonial-content {
+      background: var(--secondary);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quotes {
+      width: 40px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .testimonial-p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-client {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .category-tab {
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      background: var(--secondary);
+      margin: 0 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .category-tab:hover, .category-tab.w--current {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      padding: 4rem 5% 2rem;
+      color: white;
+    }
+
+    .footer-middle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin: 3rem 0;
+    }
+
+    .footer-title {
+      font-family: 'Recoleta', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-link {
+      color: var(--secondary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(245, 238, 236, 0.2);
+      margin: 1.5rem 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(245, 238, 236, 0.2);
+      color: var(--secondary);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .amenities-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-middle {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/" class="logo-wrapper">
+      <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/65006e189db2c329b4eb2027_222.png" alt="Zen Dental Studio" />
+    </a>
+    <div class="nav-menu">
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#patients">Patients</a>
+      <a href="#locations">Locations</a>
+      <div class="book-now-modal">Book Now</div>
+      <div class="call-now-modal">Call Now</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container-large">
+      <div class="hero-content-wrapper">
+        <div class="hero-left">
+          <div class="hero-top-text">Let us help you</div>
+          <h1 class="h1 recoleta">Reconnect with your smile</h1>
+          <p class="hero-bottom-text">Zen Dental Studio brings you a modern, calming experience that leaves your teeth healthy and your soul rejuvenated.</p>
+          <p class="hero-bottom-text">Come experience the modern, transformative way to receive dental care in San Francisco and Mountain View.</p>
+          <div class="appointment_wrapper">
+            <div class="book-now-modal">Book Now</div>
+            <div class="call-now-modal">Call Now</div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="marquee">
+            <div class="track-vertical">
+              <div class="icon-container">
+                <img src="https://images.unsplash.com/photo-1629909615957-be38eea8413c?w=400&h=300&fit=crop" alt="Dental office">
+              </div>
+              <div class="icon-container">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=600&fit=crop" alt="Dental clinic">
+              </div>
+              <div class="icon-container">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop" alt="Treatment room">
+              </div>
+              <div class="icon-container">
+                <img src="https://images.unsplash.com/photo-1629909615957-be38eea8413c?w=400&h=300&fit=crop" alt="Dental office">
+              </div>
+              <div class="icon-container">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=600&fit=crop" alt="Dental clinic">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section" id="about">
+    <div class="container-large">
+      <div class="title-wrapper">
+        <h2 class="h2 recoleta">A trip to the dentist's office should be a source of serenity, not anxiety</h2>
+        <p class="subtext-large">Here's how Zen Dental Studio delivers a patient experience like no other</p>
+      </div>
+      <div class="c-cards-list">
+        <div class="c-card fade-in">
+          <div class="transparency-lottie"></div>
+          <h3 class="card-subtitle">Led by Trust and Transparency</h3>
+          <p class="transparency-text">Expect full transparency on every treatment from start to finish and understand the cost of every procedure before it begins.</p>
+        </div>
+        <div class="c-card fade-in">
+          <div class="transparency-lottie"></div>
+          <h3 class="card-subtitle">Anxiety-free dentistry</h3>
+          <p class="transparency-text">Put your dental anxieties to rest in our modern offices, designed by experts to serve as an oasis of calm and tranquility. Receive treatments in hi-tech dental chairs and watch Netflix, listen to music, or let your eyes relax with a heated eye mask during treatment.</p>
+        </div>
+        <div class="c-card fade-in">
+          <div class="transparency-lottie"></div>
+          <h3 class="card-subtitle">A team you can count on</h3>
+          <p class="transparency-text">Every member of our team is focused on ensuring you receive clear, compassionate, and delightful treatments. Our experienced providers remain at the forefront of modern dentistry, so you can be confident you're in expert hands.</p>
+        </div>
+        <div class="c-card fade-in">
+          <div class="transparency-lottie"></div>
+          <h3 class="card-subtitle">Dentistry for the modern age</h3>
+          <p class="transparency-text">Book appointments, fill out patient forms, and make payments with ease - all online! From digital x-rays to laser dentistry to 3D scanners, we've hand-picked our technology to ensure your treatments are efficient and delightful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="services">
+    <div class="container-large">
+      <div class="title-wrapper-gallery">
+        <h2 class="h2 recoleta">A place for transformation</h2>
+      </div>
+      <div class="subtext-wrapper">
+        <p class="subtext-large">Receive exceptional dental care within spaces designed for personal rejuvenation and renewal</p>
+      </div>
+      <div class="swiper-container" id="gallery-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&h=600&fit=crop" alt="Modern dental clinic" class="gallery-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1000&h=600&fit=crop" alt="Treatment room" class="gallery-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1629909615957-be38eea8413c?w=1000&h=600&fit=crop" alt="Dental office" class="gallery-image">
+          </div>
+        </div>
+        <div class="slider-button-left"></div>
+        <div class="slider-button-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Section -->
+  <section class="amenities-wrapper" id="patients">
+    <div class="amenities-left fade-in">
+      <h2 class="amenities-title recoleta">Your dental needs, in one place</h2>
+      <p class="subtext-large">Zen Dental Studio provides a range of restorative, preventative and cosmetic treatments to keep your teeth safe and healthy.</p>
+    </div>
+    <div class="amenities-right">
+      <div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6390fdf516c6dd35372d59c9_dentistry%201.svg" alt="Hi-tech equipment" class="amenities-icon">
+          <div class="amenities-text">Hi-tech equipment</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6390feeb804907cea6d46c33_search%201.svg" alt="AI Powered" class="amenities-icon">
+          <div class="amenities-text">AI Powered Dentistry</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6390fe6876664030cce94462_streaming%201.svg" alt="Netflix/Spotify" class="amenities-icon">
+          <div class="amenities-text">Netflix/Spotify</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/639100f48049071546d4a223_Vector.svg" alt="Heated eye mask" class="amenities-icon">
+          <div class="amenities-text">Heated-eye mask</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/63910162fadf4f4f642f9980_Page-1.svg" alt="Cotton blankets" class="amenities-icon">
+          <div class="amenities-text">Soft, 100% cotton blankets</div>
+        </div>
+      </div>
+      <div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/639101f4167ec24500d15d88_coffee%201.svg" alt="Beverage station" class="amenities-icon">
+          <div class="amenities-text">Beverage station</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/639102bcfff0620d88cd5656_wifi%20(1)%201.svg" alt="Wifi" class="amenities-icon">
+          <div class="amenities-text">Wifi</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/63910308577eec298b02c43b_diffuser%201.svg" alt="Aromatherapy" class="amenities-icon">
+          <div class="amenities-text">Aromatherapy</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/639103eeaa0fde454b79843c_customize%201.svg" alt="Bespoke amenities" class="amenities-icon">
+          <div class="amenities-text">Bespoke oral-care amenities</div>
+        </div>
+        <div class="amenities-inner-wrapper fade-in">
+          <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6391048a980724f81b0470a5_tooth%201.svg" alt="Oral care products" class="amenities-icon">
+          <div class="amenities-text">Curated selection of oral care products</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container-large">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 class="h2 recoleta">Questions?</h2>
+        <p class="subtext-large">We'd love to help.</p>
+      </div>
+      <div class="faq-grid">
+        <div>
+          <div class="faq-question-wrap">
+            <div class="faq-question-bar">
+              <div class="question-title">Which services do you perform at your offices?</div>
+              <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c8148790c440ce_close-fill.svg" alt="+" class="image-9">
+            </div>
+            <div class="faq-content">
+              <p class="faq-paragraph">Zen Dental Studio is the one-stop shop for your dental needs. From restorative treatments to preventative care to cosmetic procedures such as Invisalign and Veneers, we have everything you need to bring out your best smile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial-section">
+    <div class="container-large">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 class="h2 recoleta">Our patients love us!</h2>
+        <p class="subtext-large">...and their new smiles :)</p>
+      </div>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="category-tab w--current">All</span>
+        <span class="category-tab">Exceptional Service</span>
+        <span class="category-tab">Caring Staff</span>
+        <span class="category-tab">Office Vibes</span>
+        <span class="category-tab">Trusted Partner</span>
+      </div>
+      <div class="swiper-container" id="testimonial-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-content">
+              <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c81472bec44097_clarity_block-quote-line.svg" alt="Quote" class="quotes">
+              <p class="testimonial-p">From start to finish, everyone at Zen Dental was attentive, professional, and friendly. I had the gentlest teeth cleaning I've ever experienced.</p>
+              <div class="testimonial-client">Ann B.</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-content">
+              <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c81472bec44097_clarity_block-quote-line.svg" alt="Quote" class="quotes">
+              <p class="testimonial-p">It's been more than 4 years since my last visit to the dentist so needless to say I was pretty nervous. Turns out, I didn't need to be. The whole team was awesome - professional, friendly and not at all judgmental.</p>
+              <div class="testimonial-client">Kelly F.</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-content">
+              <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c81472bec44097_clarity_block-quote-line.svg" alt="Quote" class="quotes">
+              <p class="testimonial-p">I have never had a better experience with a dentist then I did at Zen Dental Studio. From the receptionist to the Dentist, everyone I encountered was polite and friendly. I have found my new dentist!</p>
+              <div class="testimonial-client">Zack C.</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-content">
+              <img src="https://cdn.prod.website-files.com/6230bfc886c8142108c44052/6230bfc886c81472bec44097_clarity_block-quote-line.svg" alt="Quote" class="quotes">
+              <p class="testimonial-p">Wow, this is the best dentist office I have ever gone to. Such friendly staff! The inside feels like a yoga studio. I felt at peace and at ease, which is not something typical to feel at a dentist office.</p>
+              <div class="testimonial-client">Jennifer W.</div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-button-left"></div>
+        <div class="slider-button-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="locations">
+    <div class="container-large">
+      <div class="footer-middle">
+        <div class="fade-in">
+          <h2 class="footer-title recoleta">San Francisco Dental Studio</h2>
+          <div class="footer-divider"></div>
+          <a href="mailto:hello@zendentalsf.com" class="footer-link">hello@zendentalsf.com</a>
+          <a href="tel:+14158570150" class="footer-link">+1 415-857-0150</a>
+          <p class="footer-link" style="pointer-events: none;">254 5th St<br>San Francisco<br>CA 94103</p>
+          <p class="footer-link" style="pointer-events: none;">Hours<br>Mon, Tue, Fri: 8am-5pm<br>Wed, Thu: 9am-6pm</p>
+          <div class="book-now-modal" style="margin-top: 1.5rem;">Book Now</div>
+        </div>
+        <div class="fade-in">
+          <h2 class="footer-title recoleta">Mountain View Dental Studio</h2>
+          <div class="footer-divider"></div>
+          <a href="mailto:hello@zendentalmtv.com" class="footer-link">hello@zendentalmtv.com</a>
+          <a href="tel:+16505822848" class="footer-link">+1 650-582-2848</a>
+          <p class="footer-link" style="pointer-events: none;">400 San Antonio Rd, Suite A<br>Mountain View<br>CA 94040</p>
+          <p class="footer-link" style="pointer-events: none;">Hours<br>Mon, Tue, Fri: 8am-5pm<br>Wed, Thu: 9am-6pm</p>
+          <div class="book-now-modal" style="margin-top: 1.5rem;">Book Now</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Dentist in San Francisco and Mountain View • © 2025 Zen Dental Studio • All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper for Gallery
+    const gallerySwiper = new Swiper('#gallery-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: '#gallery-swiper .slider-button-right',
+        prevEl: '#gallery-swiper .slider-button-left',
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Initialize Swiper for Testimonials
+    const testimonialSwiper = new Swiper('#testimonial-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: '#testimonial-swiper .slider-button-right',
+        prevEl: '#testimonial-swiper .slider-button-left',
+      },
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Scroll Animation Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in, .c-card').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Header scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question-bar').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        document.querySelectorAll('.faq-question-wrap').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Book Now Modal (simplified - in production would open a booking modal)
+    document.querySelectorAll('.book-now-modal').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Booking system would open here. In production, this would connect to your booking platform.');
+      });
+    });
+
+    // Call Now Modal (simplified)
+    document.querySelectorAll('.call-now-modal').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Select location:\n\nSan Francisco: +1 415-857-0150\nMountain View: +1 650-582-2848');
+      });
+    });
+
+    // Testimonial Category Tabs
+    document.querySelectorAll('.category-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.category-tab').forEach(t => {
+          t.classList.remove('w--current');
+        });
+        tab.classList.add('w--current');
+      });
+    });
+
+    // Parallax effect for hero section
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset;
+          const heroRight = document.querySelector('.hero-right');
+          if (heroRight && scrolled < window.innerHeight) {
+            heroRight.style.transform = `translateY(${scrolled * 0.3}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>

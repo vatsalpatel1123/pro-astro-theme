@@ -1,0 +1,537 @@
+---
+// src/pages/index.astro
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-Powered Marketing For Practice Growth - Grow your practice with AI-driven marketing strategies">
+  <title>Webnado - AI-Powered Marketing For Practice Growth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+    }
+    
+    .logo-grid .logo-item {
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-grid .logo-item:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Lucide Icons Style */
+    .lucide {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  
+  <!-- Navigation -->
+  <nav class="bg-indigo-600 text-white py-3 px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-8">
+        <a href="/" class="text-xl font-bold">Webnado</a>
+        <div class="hidden md:flex space-x-6 text-sm">
+          <a href="#why-us" class="hover:text-indigo-200 transition">Why Us</a>
+          <a href="#features" class="hover:text-indigo-200 transition">Features</a>
+          <a href="#testimonials" class="hover:text-indigo-200 transition">Case Studies</a>
+          <a href="#" class="hover:text-indigo-200 transition">Our Work</a>
+          <a href="#" class="hover:text-indigo-200 transition">Blog</a>
+        </div>
+      </div>
+      <button class="bg-white text-indigo-600 px-5 py-2 rounded-md text-sm font-semibold hover:bg-indigo-50 transition">
+        Get Started
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+            AI-Powered<br>Marketing For<br>Practice Growth
+          </h1>
+          <p class="text-lg text-indigo-100 max-w-md">
+            Grow your practice with AI-driven new patients with Webnado. See 5X ROI in 90 days or get your money back guaranteed.
+          </p>
+          <button class="btn-primary bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 inline-flex items-center space-x-2">
+            <span>Get Now</span>
+            <svg class="lucide w-5 h-5" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=500&fit=crop" alt="Medical professional with analytics dashboard" class="rounded-2xl shadow-2xl w-full">
+            <!-- Dashboard mockup overlays -->
+            <div class="absolute -top-4 -right-4 bg-white rounded-lg shadow-xl p-4 w-64">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm text-gray-700">
+                  <span class="font-semibold">Analytics Overview</span>
+                  <svg class="lucide text-indigo-600" viewBox="0 0 24 24">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <div class="h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg flex items-center justify-center">
+                  <svg class="lucide w-16 h-16 text-indigo-600" viewBox="0 0 24 24">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-xl p-4 w-48">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <svg class="lucide text-indigo-600" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-gray-800">New Patients</div>
+                  <div class="text-xs text-gray-500">+23% this month</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          We are your practice<br>growth sidekick
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-green-50 rounded-2xl p-8 border-2 border-green-200">
+          <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="lucide text-white w-6 h-6" viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">SMM (Google ADS)</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Be seen on every channel. From Google Ads to social media - we get you in front of patients actively searching for care.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card bg-purple-50 rounded-2xl p-8 border-2 border-purple-200">
+          <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="lucide text-white w-6 h-6" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Websites</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We are web masters who have designed, deployed and optimized 1000+ medical & dental websites that actually convert visitors into patients.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card bg-pink-50 rounded-2xl p-8 border-2 border-pink-200">
+          <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="lucide text-white w-6 h-6" viewBox="0 0 24 24">
+              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Human + AI phone<br>answering</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Miss no calls 24/7. Our AI + human team answers every incoming call and books appointments while you focus on patient care.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card bg-blue-50 rounded-2xl p-8 border-2 border-blue-200">
+          <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="lucide text-white w-6 h-6" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">5x ROI in 6 months</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            On-time, on-point, on-budget. We nail down your marketing strategy and deliver measurable growth, with clear performance tracking showing 5X+ returns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Section -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-gray-600 font-semibold mb-6">Serving 8,000+ practices across US, Canada, UK & India</p>
+        <div class="logo-grid flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+          <div class="logo-item flex items-center space-x-2">
+            <svg class="w-10 h-10 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <span class="text-sm font-semibold text-gray-500">5.0</span>
+          </div>
+          <div class="logo-item h-12 flex items-center">
+            <span class="text-2xl font-bold text-gray-400">Capterra</span>
+          </div>
+          <div class="logo-item h-12 flex items-center">
+            <svg class="w-16 h-16 text-gray-400" viewBox="0 0 100 50" fill="currentColor">
+              <path d="M25 10h50v5H25z"/>
+              <path d="M15 25h70v5H15z"/>
+              <path d="M20 40h60v5H20z"/>
+            </svg>
+          </div>
+          <div class="logo-item h-12 flex items-center">
+            <span class="text-2xl font-bold text-gray-400">Oracle</span>
+          </div>
+          <div class="logo-item h-12 flex items-center">
+            <span class="text-lg font-bold text-gray-400">Amazon Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="gradient-bg text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Real Stories from Real Practices</h2>
+        <p class="text-indigo-200">Over 8,000+ medical professionals trust us to grow their practices</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white text-gray-800 rounded-2xl p-8 shadow-xl">
+          <div class="flex mb-4 space-x-1">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            "Webnado transformed our online presence. We've seen a 300% increase in new patient inquiries within just 3 months. Their AI-powered approach is truly revolutionary."
+          </p>
+          <div class="flex items-center space-x-3 border-t pt-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+              <svg class="lucide text-indigo-600" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Dr. Sarah Martinez</div>
+              <div class="text-xs text-gray-500">Family Medicine Practice</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white text-gray-800 rounded-2xl p-8 shadow-xl">
+          <div class="flex mb-4 space-x-1">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            "The ROI has been incredible. Their team handles everything from website to ads, and the AI phone system never misses a call. Best decision we made for our practice."
+          </p>
+          <div class="flex items-center space-x-3 border-t pt-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+              <svg class="lucide text-indigo-600" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Dr. Michael Chen</div>
+              <div class="text-xs text-gray-500">Dental Clinic Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white text-gray-800 rounded-2xl p-8 shadow-xl">
+          <div class="flex mb-4 space-x-1">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            "Finally, a marketing partner that understands healthcare. Our patient base has doubled, and the quality of leads is outstanding. Highly recommend Webnado!"
+          </p>
+          <div class="flex items-center space-x-3 border-t pt-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+              <svg class="lucide text-indigo-600" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Dr. Emily Roberts</div>
+              <div class="text-xs text-gray-500">Cardiology Practice</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8 space-x-3">
+        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition flex items-center justify-center">
+          <svg class="lucide w-5 h-5" viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition flex items-center justify-center">
+          <svg class="lucide w-5 h-5" viewBox="0 0 24 24">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section with lime green background -->
+  <section class="bg-lime-200 py-32 px-6">
+    <div class="container mx-auto">
+      <!-- Empty space for design balance -->
+    </div>
+  </section>
+
+  <!-- Get Started Form Section -->
+  <section class="py-20 px-6 bg-white">
+    <div class="container mx-auto max-w-2xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Get Started</h2>
+        <p class="text-gray-600">Chat with us to see how we can 5X your revenue with our 90-day "Try it"</p>
+      </div>
+      
+      <form class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+            <input type="text" placeholder="Ex: John" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+            <input type="text" placeholder="Ex: Doe" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+            <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+            <input type="tel" placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">What category best describes your practice?</label>
+          <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+            <option>Select...</option>
+            <option>Dental Practice</option>
+            <option>Medical Practice</option>
+            <option>Specialty Clinic</option>
+            <option>Multi-location Practice</option>
+          </select>
+        </div>
+
+        <div class="text-center pt-4">
+          <button type="submit" class="btn-primary bg-indigo-600 text-white px-12 py-4 rounded-lg font-semibold hover:bg-indigo-700 inline-flex items-center space-x-2">
+            <span>Submit Request</span>
+            <svg class="lucide w-5 h-5" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Webnado</h3>
+          <p class="text-gray-400 text-sm">AI-powered marketing solutions for medical practices.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+            <li><a href="#" class="hover:text-white transition">Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Webnado. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submission handler
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your interest! We will contact you shortly.');
+        this.reset();
+      });
+    }
+
+    // Add scroll animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
