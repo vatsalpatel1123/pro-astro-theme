@@ -29,11 +29,45 @@
     padding: 0.75rem 1.5rem;
     color: #475569;
     transition: all 0.2s;
+    font-size: 0.875rem;
   }
 
   .dropdown-menu a:hover {
     background: #eff6ff;
     color: #2563eb;
+  }
+
+  /* Three-column layout for Locations dropdown - only on desktop */
+  @media (min-width: 768px) {
+    .dropdown-menu.locations {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      min-width: 650px;
+      max-width: 700px;
+      padding: 1rem 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .dropdown-menu.locations.block {
+      display: grid;
+    }
+
+    .dropdown-menu.locations a {
+      padding: 0.6rem 1.25rem;
+      white-space: nowrap;
+      font-size: 0.875rem;
+    }
+
+    /* Desktop hover */
+    .dropdown:hover .dropdown-menu:not(.locations) {
+      display: block;
+    }
+    
+    .dropdown:hover .dropdown-menu.locations {
+      display: grid;
+    }
   }
 
   /* Mobile menu */
@@ -51,11 +85,35 @@
     }
   }
 
-  /* Optional: keep desktop hover */
-  @media (min-width: 768px) {
-    .dropdown:hover .dropdown-menu {
-      display: block;
+  /* Mobile dropdown styling */
+  @media (max-width: 767px) {
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      background: #f8fafc;
+      border-radius: 0.5rem;
     }
+
+    .dropdown-menu.locations {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .dropdown-menu.locations a {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Dropdown arrow animation */
+  .dropdown-arrow {
+    transition: transform 0.2s;
+  }
+
+  .dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
   }
 </style>
 
@@ -71,14 +129,14 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8 items-center">
-        <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+        <a href="/about" class="text-gray-700 hover:text-blue-600 transition">About</a>
 
         <!-- Situations Dropdown -->
         <div class="dropdown" data-dropdown>
-          <a href="/situations" class="text-gray-700 hover:text-blue-600 flex items-center" data-dropdown-toggle>
+          <a href="/situations" class="text-gray-700 hover:text-blue-600 flex items-center transition" data-dropdown-toggle>
             Situations
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 ml-1 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
@@ -90,13 +148,13 @@
 
         <!-- Locations Dropdown -->
         <div class="dropdown" data-dropdown>
-          <span class="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer" data-dropdown-toggle>
+          <span class="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer transition" data-dropdown-toggle>
             Locations
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 ml-1 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </span>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu locations">
             <a href="/great-neck">Great Neck</a>
             <a href="/manhasset">Manhasset</a>
             <a href="/port-washington">Port Washington</a>
@@ -107,21 +165,36 @@
             <a href="/jericho">Jericho</a>
             <a href="/syosset">Syosset</a>
             <a href="/melville">Melville</a>
+            <a href="/garden-city">Garden City</a>
+            <a href="/mineola">Mineola</a>
+            <a href="/hicksville">Hicksville</a>
+            <a href="/east-meadow">East Meadow</a>
+            <a href="/levittown">Levittown</a>
+            <a href="/oceanside">Oceanside</a>
+            <a href="/long-beach">Long Beach</a>
+            <a href="/freeport">Freeport</a>
+            <a href="/huntington">Huntington</a>
+            <a href="/old-westbury">Old Westbury</a>
+            <a href="/woodbury">Woodbury</a>
+            <a href="/old-brookville">Old Brookville</a>
+            <a href="/brookville">Brookville</a>
+            <a href="/plainview">Plainview</a>
           </div>
         </div>
 
-        <a href="/blog" class="text-gray-700 hover:text-blue-600">Blog</a>
-        <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <a href="/blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
       </div>
 
-      <a href="tel:7182887300" class="flex items-center justify-center bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="tel:7182887300" class="hidden md:flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
         </svg>
+        <span class="font-semibold">(718) 288-7300</span>
       </a>
 
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2">
+      <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -129,15 +202,15 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu md:hidden mt-4 space-y-4">
-      <a href="/" class="block text-gray-700 hover:text-blue-600">Home</a>
-      <a href="/about" class="block text-gray-700 hover:text-blue-600">About</a>
+    <div id="mobile-menu" class="mobile-menu md:hidden mt-4 space-y-2 pb-4">
+      <a href="/" class="block text-gray-700 hover:text-blue-600 py-2 transition">Home</a>
+      <a href="/about" class="block text-gray-700 hover:text-blue-600 py-2 transition">About</a>
 
       <!-- Mobile Situations Dropdown -->
       <div class="dropdown" data-dropdown>
-        <span class="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer" data-dropdown-toggle>
+        <span class="text-gray-700 hover:text-blue-600 flex items-center justify-between cursor-pointer py-2 transition" data-dropdown-toggle>
           Situations
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </span>
@@ -149,13 +222,13 @@
 
       <!-- Mobile Locations Dropdown -->
       <div class="dropdown" data-dropdown>
-        <span class="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer" data-dropdown-toggle>
+        <span class="text-gray-700 hover:text-blue-600 flex items-center justify-between cursor-pointer py-2 transition" data-dropdown-toggle>
           Locations
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </span>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu locations">
           <a href="/great-neck">Great Neck</a>
           <a href="/manhasset">Manhasset</a>
           <a href="/port-washington">Port Washington</a>
@@ -166,11 +239,33 @@
           <a href="/jericho">Jericho</a>
           <a href="/syosset">Syosset</a>
           <a href="/melville">Melville</a>
+          <a href="/garden-city">Garden City</a>
+          <a href="/mineola">Mineola</a>
+          <a href="/hicksville">Hicksville</a>
+          <a href="/east-meadow">East Meadow</a>
+          <a href="/levittown">Levittown</a>
+          <a href="/oceanside">Oceanside</a>
+          <a href="/long-beach">Long Beach</a>
+          <a href="/freeport">Freeport</a>
+          <a href="/huntington">Huntington</a>
+          <a href="/old-westbury">Old Westbury</a>
+          <a href="/woodbury">Woodbury</a>
+          <a href="/old-brookville">Old Brookville</a>
+          <a href="/brookville">Brookville</a>
+          <a href="/plainview">Plainview</a>
         </div>
       </div>
 
-      <a href="/blog" class="block text-gray-700 hover:text-blue-600">Blog</a>
-      <a href="/contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+      <a href="/blog" class="block text-gray-700 hover:text-blue-600 py-2 transition">Blog</a>
+      <a href="/contact" class="block text-gray-700 hover:text-blue-600 py-2 transition">Contact</a>
+      
+      <!-- Mobile Call Button -->
+      <a href="tel:7182887300" class="flex items-center justify-center bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span class="font-semibold">(718) 288-7300</span>
+      </a>
     </div>
   </div>
 </nav>
@@ -179,26 +274,54 @@
   // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
-  });
+  
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('show');
+    });
+  }
 
-  // Dropdown toggle
+  // Dropdown toggle for click
   const dropdownToggles = document.querySelectorAll('[data-dropdown-toggle]');
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
+      
+      const dropdown = toggle.closest('.dropdown');
       const menu = toggle.nextElementSibling;
+      
+      // Close other dropdowns
+      document.querySelectorAll('.dropdown-menu.block').forEach(otherMenu => {
+        if (otherMenu !== menu) {
+          otherMenu.classList.remove('block');
+          otherMenu.closest('.dropdown')?.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
       menu.classList.toggle('block');
+      dropdown?.classList.toggle('active');
     });
   });
 
   // Close dropdowns when clicking outside
   document.addEventListener('click', (e) => {
-    dropdownToggles.forEach(toggle => {
-      const menu = toggle.nextElementSibling;
-      if (!toggle.parentElement.contains(e.target)) {
+    const target = e.target as HTMLElement;
+    if (!target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu.block').forEach(menu => {
         menu.classList.remove('block');
+        menu.closest('.dropdown')?.classList.remove('active');
+      });
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = document.querySelectorAll('#mobile-menu a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu) {
+        mobileMenu.classList.remove('show');
       }
     });
   });

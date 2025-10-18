@@ -143,55 +143,231 @@ import AboutForm from '../components/aboutForm.astro';
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                    Why Long Island Homeowners Trust Us
-                </h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    We're not just another "we buy houses" company. We're your Long Island neighbors with decades of proven expertise.
+    <!-- Why Choose Us Section / The Leverage Edge -->
+<section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                The Pro Home Buyers Edge
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                We're not just another "we buy houses" company. We're your Long Island neighbors with decades of proven expertise.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-5 gap-6">
+            <!-- Card 1 -->
+            <div class="text-center p-6">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">NO REPAIRS</h3>
+                <p class="text-gray-600 text-sm">
+                    We will happily buy your property AS-IS, no need to spend money on repairs.
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">🏗️</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">40+ Years of Experience</h3>
-                    <p class="text-gray-600">
-                        Combined decades of expertise in construction, development, and real estate. We know Long Island properties inside and out.
-                    </p>
+
+            <!-- Card 2 -->
+            <div class="text-center p-6">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                    </svg>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">💰</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Development-Based Offers</h3>
-                    <p class="text-gray-600">
-                        Our offers are rooted in real development analysis—not quick flips. We evaluate what your property can become, ensuring you receive its true worth.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">📍</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Local Knowledge, Fair Process</h3>
-                    <p class="text-gray-600">
-                        Born and raised in Manhasset with deep roots across Nassau County. We understand neighborhood dynamics, zoning, and market trends.
-                    </p>
-                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">WE DO THE WORK</h3>
+                <p class="text-gray-600 text-sm">
+                    From paperwork to dealing with complex legal matters, we'll handle the headaches so you don't have to.
+                </p>
             </div>
-            <div class="text-center mt-8">
-                <button class="border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
-                    Learn More About Us →
-                </button>
+
+            <!-- Card 3 -->
+            <div class="text-center p-6">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">NO FEES</h3>
+                <p class="text-gray-600 text-sm">
+                    No hidden fees, no commissions, no complications.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="text-center p-6">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">CLOSE FAST</h3>
+                <p class="text-gray-600 text-sm">
+                    Pick your timeline, close on your schedule, and get your cash fast!
+                </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="text-center p-6">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">LOCAL SERVICE</h3>
+                <p class="text-gray-600 text-sm">
+                    We live in New Jersey and are familiar with our local towns and counties, so we know how to give New Jersey service.
+                </p>
             </div>
         </div>
-    </section>
+
+        <!-- Secondary Benefits Row -->
+        <div class="grid md:grid-cols-2 gap-8 mt-16">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">50+ Years of Experience</h3>
+                        <p class="text-gray-600">
+                            With decades of expertise in construction, development, and real estate, we know how to structure our offers to best suit your needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Value-Based Offers</h3>
+                        <p class="text-gray-600">
+                            Our offers are rooted on the value of your property, not its market value. This often results in us offering above-market prices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Properties We Buy Section -->
+<section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                The Types of Properties We Buy
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                We specialize in purchasing specific property types across Long Island that offer development potential and value.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Ranch-Style & Split-Level Homes</h3>
+                <p class="text-gray-600 text-sm">Single-story or split-level properties with development potential</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Homes Built Before 1975</h3>
+                <p class="text-gray-600 text-sm">Older properties with character and redevelopment opportunities</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Homes Under 2,500 sqft</h3>
+                <p class="text-gray-600 text-sm">Compact properties ideal for renovation or rebuilding</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Above-Average Lot Sizes</h3>
+                <p class="text-gray-600 text-sm">Properties on larger-than-typical lots with expansion potential</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Older Colonials, Capes & Cottages</h3>
+                <p class="text-gray-600 text-sm">Traditional homes with dated layouts or low ceilings</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 110 2H5.414l2.293 2.293a1 1 0 11-1.414 1.414L4 6.414V8a1 1 0 11-2 0V4zm14 12a1 1 0 01-1 1h-3a1 1 0 110-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L16 13.586V12a1 1 0 112 0v4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Large Parcels for Subdivision</h3>
+                <p class="text-gray-600 text-sm">Land that could allow subdivision, additions, or new builds</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Land & Vacant Lots</h3>
+                <p class="text-gray-600 text-sm">Undeveloped land ready for new construction</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Properties in Original Condition</h3>
+                <p class="text-gray-600 text-sm">Homes with no updates or additions in decades</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-10">
+            <p class="text-gray-700 mb-6">
+                Not sure if your property qualifies? Give us a call—we'd love to discuss your options!
+            </p>
+            <a href="tel:7182887300" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+                Call (718) 288-7300
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- Situations We Help With Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16">
+    <!-- <section class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
                 Whatever Your Situation, We Can Help
@@ -290,10 +466,112 @@ import AboutForm from '../components/aboutForm.astro';
                 See How We Can Help Your Situation →
             </button>
         </div>
-    </section>
+    </section> -->
+
+    <!-- Situations We Help With Section -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Whatever Your Situation, We Can Help
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Life happens. Whether you're downsizing, simply moving, or facing financial stress—we're here to help with compassion and professionalism.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Inherited Property</h3>
+            <p class="text-gray-600 text-sm">Simplify the process of selling an estate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Foreclosure</h3>
+            <p class="text-gray-600 text-sm">Stop foreclosure and move forward with dignity</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Behind on Taxes</h3>
+            <p class="text-gray-600 text-sm">Avoid tax liens and legal issues</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Divorce</h3>
+            <p class="text-gray-600 text-sm">Quick, private sale during difficult times</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Job Relocation</h3>
+            <p class="text-gray-600 text-sm">Sell fast without listing hassles</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Vacant Property</h3>
+            <p class="text-gray-600 text-sm">Stop paying for a property you don't use</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Code Violations</h3>
+            <p class="text-gray-600 text-sm">Sell as-is without costly repairs</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Downsizing</h3>
+            <p class="text-gray-600 text-sm">Move to your next chapter stress-free</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-8">
+        <a href="/contact" class="inline-block border border-gray-300 px-8 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition">
+            See How We Can Help Your Situation →
+        </a>
+    </div>
+</section>
 
     <!-- Local Expertise Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+    <!-- <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Proudly Serving Long Island Communities</h2>
@@ -329,7 +607,62 @@ import AboutForm from '../components/aboutForm.astro';
                 </button>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <!-- Local Expertise Section -->
+<section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                Proudly Buying Property in These Long Island Neighborhoods
+            </h2>
+            <p class="text-gray-600 text-lg">
+                From Nassau to Suffolk County, we know every neighborhood like the back of our hand.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Great Neck</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Manhasset</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Port Washington</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Roslyn</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Glen Head</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Glen Cove</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Westbury</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Jericho</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Syosset</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Melville</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Garden City</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Mineola</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Hicksville</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">East Meadow</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Levittown</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Oceanside</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Long Beach</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Freeport</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Huntington</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Old Westbury</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Woodbury</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Old Brookville</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Brookville</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Plainview</span>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-gray-700 mb-6 text-lg">
+                Based in Manhasset with family roots throughout Nassau County. We buy property across all of Long Island in Nassau and Suffolk County, but our focus is in the neighborhoods listed above.
+            </p>
+            <p class="text-gray-600 mb-6">
+                If you are unsure whether we service your area, just call us at <a href="tel:7182887300" class="text-blue-600 font-semibold hover:underline">(718) 288-7300</a> to see!
+            </p>
+            <a href="tel:7182887300" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                Call to Confirm Your Area →
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- Trust & Credibility Section -->
     <!-- About Section -->
@@ -341,11 +674,11 @@ import AboutForm from '../components/aboutForm.astro';
                         Built on Trust. Rooted in Long Island.
                     </h2>
                     <p class="text-gray-600 mb-6">
-                        Pro Home Buyers was founded on the principles of integrity, transparency, and local expertise. With over 40 years of combined experience in building and real estate development, we understand what makes Long Island properties valuable.
-                    </p>
-                    <p class="text-gray-600 mb-8">
-                        Our roots run deep in Manhasset, where we've witnessed the evolution of Long Island's real estate market firsthand. This intimate knowledge allows us to make fair, development-based offers that reflect true market value—not opportunistic lowballs.
-                    </p>
+    Pro Home Buyers was founded on the principles of integrity, transparency, and local expertise. With over 50 years of combined experience in building and real estate development, we understand what makes Long Island properties valuable.
+</p>
+<p class="text-gray-600 mb-8">
+    Our roots run deep in Nassau County, where we've witnessed the evolution of Long Island's North Shore real estate market firsthand. This intimate knowledge allows us to make fast, fair, value-based offers tailored to your specific needs and closing preferences.
+</p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-center space-x-3">
                             <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -518,6 +851,17 @@ import AboutForm from '../components/aboutForm.astro';
                     As fast as 7 days, or we can wait months if you need more time. You choose the closing date that works best for your situation.
                 </div>
             </details>
+            <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+    <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
+        What areas do you buy in?
+        <svg class="w-6 h-6 transform group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </summary>
+    <div class="px-8 pb-6 text-gray-600">
+        We buy property across all of Long Island in Nassau and Suffolk County, but our focus is in Great Neck, Manhasset, Port Washington, Roslyn, Glen Cove, Garden City, Mineola, Syosset, Jericho, Hicksville, and surrounding areas. If you are unsure, just call us at (718) 288-7300 to see!
+    </div>
+</details>
 
             <details class="bg-white rounded-xl shadow-md overflow-hidden group">
                 <summary class="px-8 py-6 cursor-pointer font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
